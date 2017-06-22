@@ -6,10 +6,10 @@
   margin-bottom:45px;
   background-color:rgb(243,243,243);
   text-align: center;
-  background: -webkit-linear-gradient(top right, rgb(59,210,174) , rgb(54,186,194));
-  background: -o-linear-gradient(top right, rgb(59,210,174), rgb(54,186,194));
-  background: -moz-linear-gradient(top right, rgb(59,210,174), rgb(54,186,194));
-  background: linear-gradient(top right, rgb(59,210,174), rgb(54,186,194));
+  background: -webkit-linear-gradient(top left, rgb(59,210,174) , rgb(54,186,194));
+  background: -o-linear-gradient(top left, rgb(59,210,174), rgb(54,186,194));
+  background: -moz-linear-gradient(top left, rgb(59,210,174), rgb(54,186,194));
+  background: linear-gradient(top left, rgb(59,210,174), rgb(54,186,194));
 }
 .header h1
 {

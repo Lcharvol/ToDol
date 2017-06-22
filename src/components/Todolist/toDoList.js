@@ -14,6 +14,7 @@ class toDoList extends Component {
   state = {
     checked: false,
     trashfocus: false,
+    wrap: false,
   }
 
   gocheck = () => {
@@ -28,20 +29,34 @@ class toDoList extends Component {
     }
   };
 
+  affmore = () => {
+    if (this.state.wrap === false) { this.setState({ wrap: true }); } else {
+      this.setState({ wrap: false });
+    }
+  }
+
   render() {
     const { props: { todo, since, fore, index, remove } } = this;
     const { checked } = this.state;
     const { trashfocus } = this.state;
+    const { wrap } = this.state;
 
     return (
       <div className="toDoList">
-        <div className="toDoListElem">
+        <div className={wrap ? 'toDoListElem unwraped' : 'toDoListElem'}>
           <div className="checkbox" onClick={this.gocheck}>
             <i className={checked ? 'fa fa-check check' : ''} aria-hidden="true" />
           </div>
           <p className="to_do">{todo}</p>
           <p className="since">Since: {since}</p>
           <p className="fore">For: {fore}</p>
+          <div className="more">
+            <i
+              className={wrap ? 'fa fa-chevron-up chev' : 'fa fa-chevron-down chev'}
+              aria-hidden="true"
+              onClick={this.affmore}
+            ></i>
+          </div>
           <div className="delete">
             <i
               className={trashfocus ? "fa fa-trash poubelle" : "fa fa-trash-o poubelle"}
