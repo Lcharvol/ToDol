@@ -1,0 +1,64 @@
+.TodolistBox
+{
+  position: relative;
+  width:690px;
+  height:65px;
+  border-radius: 5px;
+  background-color:rgb(243,243,243);
+  margin:auto;
+  text-align: left;
+}
+
+.addtolist
+{
+  position: relative;
+  display: inline-block;
+  width:30px;
+  height:30px;
+  background-color:rgb(59,210,174);
+  border: solid;
+  border-width:4px;
+  border-color:rgb(59,210,174);
+  top: 7px;
+  margin-left:14px;
+  margin-right:16px;
+  border-radius: 5px;
+}
+.addtolist:hover
+{
+  cursor: pointer;
+  border-color:rgb(69,240,174);
+  background-color:rgb(69,240,174);
+}
+
+.todoinput
+{
+  position: relative;
+  width:200px;
+  margin-left: 25px;
+  outline: none;
+  resize: none;
+  color:rgb(69,240,174);
+  background-color: rgb(243,243,243);
+  border: 0px;
+  top:10px;
+}
+.sinceinput
+{
+  position: relative;
+  width:200px;
+  margin-left: 25px;
+  outline: none;
+  resize: none;
+  color:rgb(69,240,174);
+  background-color: rgb(243,243,243);
+  border: 0px;
+  top:10px;
+}
+.plus
+{
+  color:white;
+  position: absolute;
+  left:3px;
+  top:1px;
+}
