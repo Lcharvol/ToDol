@@ -15,13 +15,14 @@ class toDoList extends Component {
     todo: 'Null',
     since: '00/00/0000',
     fore: '00/00/0000',
+    index: 0,
   }
 
   state = {
     checked: false,
     trashfocus: false,
     wrap: false,
-    progress: 30,
+    progress: 0,
   }
 
   gocheck = () => {
@@ -42,9 +43,23 @@ class toDoList extends Component {
     }
   }
 
+  changeProgress = () => {
+    const newprogress = this.state.progress + 1;
+    this.setState({ progress: newprogress });
+  }
+
   render() {
     const { props: { todo, since, fore, index, remove } } = this;
     const { checked, trashfocus, wrap, progress } = this.state;
+    let barStyle = {
+      width: `${progress}%`,
+    };
+    if (progress < 3) {
+      barStyle = {
+        width: '3%',
+      };
+    }
+
     return (
       <div className="toDoList">
         <div className={wrap ? 'toDoListElem unwraped' : 'toDoListElem'}>
@@ -71,8 +86,8 @@ class toDoList extends Component {
             />
           </div>
           <div className="progressBar">
-            <div className="progressBarInner">
-              <div className="cursor" />
+            <div className="progressBarInner" style={barStyle}>
+              <div className="cursor" onMouseDown={this.changeProgress} />
             </div>
             <p className="progressScore">{progress}%</p>
           </div>

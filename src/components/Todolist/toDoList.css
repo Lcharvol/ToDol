@@ -147,7 +147,6 @@
 .progressBarInner
 {
   position: relative;
-  width:50%;
   height:100%;
   border-radius: 100px;
   background-color:rgb(243,243,243);
