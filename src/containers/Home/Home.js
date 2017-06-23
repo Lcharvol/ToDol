@@ -12,13 +12,12 @@ class Home extends Component {
     list,
   };
 
-  remove = index => {
+  remove = (index) => {
     const { list } = this.state;
-
     this.setState({ list: list.filter((li, i) => i !== index) });
   };
 
-  render () {
+  render() {
     const { list } = this.state;
     return (
       <div className="homepage">
@@ -36,6 +35,6 @@ class Home extends Component {
       </div>
     );
   }
-};
+}
 
 export default Home;

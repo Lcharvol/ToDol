@@ -11,10 +11,17 @@ class toDoList extends Component {
     remove: PropTypes.func.isRequired,
   };
 
+  static defaultProps = {
+    todo: 'Null',
+    since: '00/00/0000',
+    fore: '00/00/0000',
+  }
+
   state = {
     checked: false,
     trashfocus: false,
     wrap: false,
+    progress: 30,
   }
 
   gocheck = () => {
@@ -37,10 +44,7 @@ class toDoList extends Component {
 
   render() {
     const { props: { todo, since, fore, index, remove } } = this;
-    const { checked } = this.state;
-    const { trashfocus } = this.state;
-    const { wrap } = this.state;
-
+    const { checked, trashfocus, wrap, progress } = this.state;
     return (
       <div className="toDoList">
         <div className={wrap ? 'toDoListElem unwraped' : 'toDoListElem'}>
@@ -55,17 +59,22 @@ class toDoList extends Component {
               className={wrap ? 'fa fa-chevron-up chev' : 'fa fa-chevron-down chev'}
               aria-hidden="true"
               onClick={this.affmore}
-            ></i>
+            />
           </div>
           <div className="delete">
             <i
-              className={trashfocus ? "fa fa-trash poubelle" : "fa fa-trash-o poubelle"}
+              className={trashfocus ? 'fa fa-trash poubelle' : 'fa fa-trash-o poubelle'}
               aria-hidden="true"
               onMouseEnter={this.handletrashfocus}
               onMouseLeave={this.handletrashfocus}
               onClick={() => remove(index)}
-              >
-            </i>
+            />
+          </div>
+          <div className="progressBar">
+            <div className="progressBarInner">
+              <div className="cursor" />
+            </div>
+            <p className="progressScore">{progress}%</p>
           </div>
         </div>
       </div>

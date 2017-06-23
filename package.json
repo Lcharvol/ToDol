@@ -18,7 +18,6 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0"
   },
   "scripts": {
@@ -29,13 +28,9 @@
   },
   "babel": {
     "presets": [
-      [
-        "latest",
-        {
-          "modules": false
-        }
-      ],
-      "stage-0"
+      "env",
+      "stage-0",
+      "react"
     ]
   }
 }
