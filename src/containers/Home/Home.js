@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import Header from '../../components/Header';
 import Todolist from '../../components/Todolist';
-import TodolistBox from '../../components/TodolistBox';
+import Buttonadd from '../../components/Buttonadd';
+import Addbox from '../../components/AddBox';
 import { list } from '../../Constants';
 import './Home.css';
 
@@ -10,6 +11,7 @@ class Home extends Component {
 
   state = {
     list,
+    displaybox: false,
   };
 
   remove = (index) => {
@@ -17,10 +19,16 @@ class Home extends Component {
     this.setState({ list: list.filter((li, i) => i !== index) });
   };
 
-  affaddbox = () => (console.log('coucou'))
+  affaddbox = () => {
+    if (this.state.displaybox === false) {
+      this.setState({ displaybox: true });
+    } else {
+      this.setState({ displaybox: false });
+    }
+  };
 
   render() {
-    const { list } = this.state;
+    const { list, displaybox, close } = this.state;
     return (
       <div className="homepage">
         <div className="todolist">
@@ -34,9 +42,12 @@ class Home extends Component {
             />
           ))}
         </div>
-        <TodolistBox
+        <Buttonadd
           affaddbox={this.affaddbox}
         />
+        {displaybox && <Addbox
+          affaddbox={this.affaddbox}
+        />}
       </div>
     );
   }

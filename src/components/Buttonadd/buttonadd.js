@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 
-import './todolistbox.css';
+import './buttonadd.css';
 
-class TodolistBox extends Component {
+class Buttonadd extends Component {
 
   state = {
 
   };
 
   render() {
-    const { props: { affaddbox } } = this;
+    const { affaddbox } = this.props;
+
     return (
       <div className="TodolistBox" onClick={affaddbox}>
         <i className="fa fa-plus fa-3x plus" aria-hidden="true" />
@@ -19,4 +20,4 @@ class TodolistBox extends Component {
   }
 }
 
-export default TodolistBox;
+export default Buttonadd;

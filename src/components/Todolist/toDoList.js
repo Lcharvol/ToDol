@@ -28,11 +28,10 @@ class toDoList extends Component {
     startDrag: 0,
   }
 
-  gocheck = () => {
-    if (this.state.checked === false) { this.setState({ checked: true }); } else {
-      this.setState({ checked: false });
-    }
-  };
+  componentDidMount = () => {
+    window.addEventListener('mousemove', this.updateProgress, false);
+    window.addEventListener('mouseup', this.dragOff, false);
+  }
 
   handletrashfocus = () => {
     if (this.state.trashfocus === false) { this.setState({ trashfocus: true }); } else {
@@ -51,18 +50,20 @@ class toDoList extends Component {
       let percentage = ((e.screenX - (this.state.startDrag)) / 8);
 
       if (percentage < 0) { percentage = 0; }
-      if (percentage > 100) { percentage = 100; }
+      if (percentage > 100) { percentage = 100; this.setState({ checked: true }); }
       this.setState({ progress: percentage });
     }
   }
 
-  componentDidMount = () => {
-    window.addEventListener('mousemove', this.updateProgress, false);
-    window.addEventListener('mouseup', this.dragOff, false);
+
+  gocheck = () => {
+    if (this.state.checked === false) { this.setState({ checked: true }); } else { this.setState({ checked: false }); }
+  };
+
+  dragOn = (e) => {
+    this.setState({ progDrag: true });
+    if (this.state.startDrag === 0) { this.setState({ startDrag: e.screenX }); }
   }
-
-
-  dragOn = (e) => { this.setState({ progDrag: true }); this.setState({ startDrag: e.screenX }); }
   dragOff = () => { this.setState({ progDrag: false }); }
 
   render() {
@@ -71,12 +72,11 @@ class toDoList extends Component {
     let barStyle = { width: `${progress}%` };
 
     if (progress < 3) { barStyle = { width: '3%' }; }
-    if (progress >= 100) { barStyle = { width: '100%' }; }
 
     return (
-      <div ref="Test" className="toDoList">
+      <div className="toDoList">
         <div className={wrap ? 'toDoListElem unwraped' : 'toDoListElem'}>
-          <div className="checkbox" onClick={this.gocheck}>
+          <div role="checkbox" aria-checked="false" className="checkbox" onClick={this.gocheck}>
             <i className={checked ? 'fa fa-check check' : ''} aria-hidden="true" />
           </div>
           <p className="to_do">{todo}</p>
@@ -106,7 +106,7 @@ class toDoList extends Component {
                 onMouseUp={this.dragOff}
               />
             </div>
-            <p className="progressScore">{progress}%</p>
+            <p className="progressScore">{Math.round(progress)}%</p>
           </div>
         </div>
       </div>
