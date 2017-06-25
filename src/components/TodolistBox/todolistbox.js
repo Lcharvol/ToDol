@@ -5,42 +5,16 @@ import './todolistbox.css';
 class TodolistBox extends Component {
 
   state = {
-    valuetodo: '',
-    valuesince: '',
-  };
 
-  handleChangetodo = ({ target: { valuetodo } }) => {
-    this.setState({ valuetodo });
-  };
-
-  handleChangesince = ({ target: { valuesince } }) => {
-    this.setState({ valuesince });
   };
 
   render() {
-    const { valuetodo } = this.state;
-    const { valuesince } = this.state;
-
+    const { props: { affaddbox } } = this;
     return (
-      <div className="TodolistBox">
-        <div className="addtolist">
-          <i className="fa fa-plus fa-2x plus" aria-hidden="true" />
-        </div>
-        <textarea
-          className="todoinput"
-          rows={3}
-          placeholder="What I need to do"
-          value={valuetodo}
-          onChange={this.handleChangetodo}
-        />
-        <textarea
-          className="sinceinput"
-          rows={3}
-          placeholder="since"
-          value={valuesince}
-          onChange={this.handleChangesince}
-        />
+      <div className="TodolistBox" onClick={affaddbox}>
+        <i className="fa fa-plus fa-3x plus" aria-hidden="true" />
       </div>
+
     );
   }
 }

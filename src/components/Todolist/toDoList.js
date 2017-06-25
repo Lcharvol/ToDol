@@ -9,6 +9,7 @@ class toDoList extends Component {
     since: PropTypes.string.isRequired,
     fore: PropTypes.string.isRequired,
     remove: PropTypes.func.isRequired,
+    index: PropTypes.number.isRequired,
   };
 
   static defaultProps = {
@@ -23,6 +24,8 @@ class toDoList extends Component {
     trashfocus: false,
     wrap: false,
     progress: 0,
+    progDrag: false,
+    startDrag: 0,
   }
 
   gocheck = () => {
@@ -43,25 +46,35 @@ class toDoList extends Component {
     }
   }
 
-  changeProgress = () => {
-    const newprogress = this.state.progress + 1;
-    this.setState({ progress: newprogress });
+  updateProgress = (e) => {
+    if (this.state.progDrag === true) {
+      let percentage = ((e.screenX - (this.state.startDrag)) / 8);
+
+      if (percentage < 0) { percentage = 0; }
+      if (percentage > 100) { percentage = 100; }
+      this.setState({ progress: percentage });
+    }
   }
+
+  componentDidMount = () => {
+    window.addEventListener('mousemove', this.updateProgress, false);
+    window.addEventListener('mouseup', this.dragOff, false);
+  }
+
+
+  dragOn = (e) => { this.setState({ progDrag: true }); this.setState({ startDrag: e.screenX }); }
+  dragOff = () => { this.setState({ progDrag: false }); }
 
   render() {
     const { props: { todo, since, fore, index, remove } } = this;
     const { checked, trashfocus, wrap, progress } = this.state;
-    let barStyle = {
-      width: `${progress}%`,
-    };
-    if (progress < 3) {
-      barStyle = {
-        width: '3%',
-      };
-    }
+    let barStyle = { width: `${progress}%` };
+
+    if (progress < 3) { barStyle = { width: '3%' }; }
+    if (progress >= 100) { barStyle = { width: '100%' }; }
 
     return (
-      <div className="toDoList">
+      <div ref="Test" className="toDoList">
         <div className={wrap ? 'toDoListElem unwraped' : 'toDoListElem'}>
           <div className="checkbox" onClick={this.gocheck}>
             <i className={checked ? 'fa fa-check check' : ''} aria-hidden="true" />
@@ -87,7 +100,11 @@ class toDoList extends Component {
           </div>
           <div className="progressBar">
             <div className="progressBarInner" style={barStyle}>
-              <div className="cursor" onMouseDown={this.changeProgress} />
+              <div
+                className="cursor"
+                onMouseDown={this.dragOn}
+                onMouseUp={this.dragOff}
+              />
             </div>
             <p className="progressScore">{progress}%</p>
           </div>

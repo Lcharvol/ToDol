@@ -17,6 +17,8 @@ class Home extends Component {
     this.setState({ list: list.filter((li, i) => i !== index) });
   };
 
+  affaddbox = () => (console.log('coucou'))
+
   render() {
     const { list } = this.state;
     return (
@@ -32,6 +34,9 @@ class Home extends Component {
             />
           ))}
         </div>
+        <TodolistBox
+          affaddbox={this.affaddbox}
+        />
       </div>
     );
   }
