@@ -9,11 +9,18 @@
 {
   position: relative;
   width:500px;
-  height:250px;
   border-radius: 5px;
   top: calc(50vh - 150px);
-  background-color: rgb(243,243,243);
+  background-color: white;
   margin:auto;
+}
+.addboxinner h1
+{
+  position: relative;
+  font-size: 1.6em;
+  top:10px;
+  margin-bottom: 30px;
+  color:rgb(59,210,174);
 
 }
 .cross
@@ -29,29 +36,50 @@
   transform: rotate(90deg);
   transition: all 0.3s;
 }
+.todotext
+{
+  resize: none;
+  outline: none;
+  width: 70%;
+  border: none;
+  text-align: center;
+  color:rgb(59,210,174);
+  font-size: 1.5em;
+  background-color: rgb(243,243,243);
+}
 .validate
 {
   position: relative;
+  display: block;
   width:100px;
   height:30px;
   border: 0;
   border-radius: 5px;
-  background-color:rgb(243,243,243);
   margin:auto;
-  top:25px;
+  padding-bottom:20px;
+  color:white;
+  margin-top: 35px;
+  font-size: 1em;
+  padding-top: 6px;
+  bottom: 25px;
   background: -webkit-linear-gradient(top left, rgb(59,210,174) , rgb(54,186,194));
   background: -o-linear-gradient(top left, rgb(59,210,174), rgb(54,186,194));
   background: -moz-linear-gradient(top left, rgb(59,210,174), rgb(54,186,194));
   background: linear-gradient(top left, rgb(59,210,174), rgb(54,186,194));
   box-shadow: inset 0 7em 10em -5em rgba(255,255,255,0.3);
 }
+.validate:focus
+{
+  outline:none;
+}
 .validate:hover
 {
   cursor: pointer;
 }
-.validate p
-{
-  position: relative;
-  top:2px;
-  color:white;
+input[type="date"]::-webkit-calendar-picker-indicator{
+
+       background-position:center;
+       background-size:20px 20px;
+       background-repeat:no-repeat;
+      color:rgba(204,204,204,0);
 }

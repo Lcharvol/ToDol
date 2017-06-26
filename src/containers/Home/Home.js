@@ -27,6 +27,22 @@ class Home extends Component {
     }
   };
 
+  publish = (value, date) => {
+    const { list } = this.state;
+
+    this.setState({
+      list: [{
+        todo: value,
+        fore: date,
+        since: '15/10/2017',
+        done: 'no',
+      },
+        ...list,
+      ],
+      displaybox: false,
+    });
+  };
+
   render() {
     const { list, displaybox, close } = this.state;
     return (
@@ -47,6 +63,7 @@ class Home extends Component {
         />
         {displaybox && <Addbox
           affaddbox={this.affaddbox}
+          publish={this.publish}
         />}
       </div>
     );
