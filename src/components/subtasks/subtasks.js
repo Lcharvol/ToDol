@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import SubtasksList from '../subtasksList';
 import './subtasks.css';
 
 class Subtasks extends Component {
@@ -12,9 +13,16 @@ class Subtasks extends Component {
     return (
       <div className="subtasks_main">
         <div className="addsubtasks">
-          <i className="fa fa-plus plustask" aria-hidden="true" />
+          <div className="addsubtasksbutton">
+            <i className="fa fa-plus plustask" aria-hidden="true" />
+          </div>
           <p>Add a new subtask</p>
         </div>
+        <SubtasksList />
+        <SubtasksList />
+        <SubtasksList />
+        <SubtasksList />
+        <SubtasksList />
       </div>
     );
   }

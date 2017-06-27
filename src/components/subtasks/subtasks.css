@@ -4,20 +4,38 @@
   margin: auto;
   margin-top:35px;
   margin-bottom: 25px;
+  padding-top: 10px;
+  padding-bottom: 15px;
   width:90%;
   border-radius: 5px;
-  min-height:50px;
   background-color:rgb(243,243,243);
   box-shadow: inset 5px 5px 10px 0px rgba(155,155,155,0.2);
 }
+
+.subtasks_main p
+{
+  display: inline-block;
+  width:200px;
+  margin-top:12px;
+  margin-bottom: 12px;
+  margin-left:20px;
+  color: rgb(59,210,174);
+}
+
 .addsubtasks
+{
+  position: relative;
+  margin:auto;
+  padding-left:30px;
+}
+
+.addsubtasksbutton
 {
   position: relative;
   display: inline-block;
   border-radius: 5px;
   width:25px;
   height:25px;
-  top: 10px;
   margin-left:10px;
   transition: all 0.2s;
   background-color:rgb(243,243,243);
@@ -32,18 +50,11 @@
     0 1em 3em -0.5em rgba(150,150,150,0.5),
     0 3em 3em -0.25em rgba(150,150,150,0.2);
 }
-.addsubtasks p
-{
-  display: inline-block;
-  width:200px;
-  margin-left:50px;
-  color: rgb(59,210,174);
-}
-.addsubtasks:hover
+.addsubtasksbutton:hover
 {
   cursor: pointer;
 }
-.addsubtasks:active{
+.addsubtasksbutton:active{
   box-shadow: none;
   transform: scale(0.9);
 }
