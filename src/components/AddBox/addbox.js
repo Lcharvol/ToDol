@@ -21,7 +21,6 @@ class Addbox extends Component {
   };
 
   handleChangeDate = ({ target: { date } }) => {
-    console.log('coucou');
     // this.setState({ value });
   };
 

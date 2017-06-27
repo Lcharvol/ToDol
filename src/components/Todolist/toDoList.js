@@ -11,6 +11,7 @@ class toDoList extends Component {
     fore: PropTypes.string.isRequired,
     remove: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
+    subtasks: PropTypes.object.isRequired,
   };
 
   static defaultProps = {
@@ -18,6 +19,8 @@ class toDoList extends Component {
     since: '00/00/0000',
     fore: '00/00/0000',
     index: 0,
+    subtasks: {
+    },
   }
 
   state = {

@@ -1,9 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import SubtasksList from '../subtasksList';
 import './subtasks.css';
 
 class Subtasks extends Component {
+
+  static propTypes = {
+    subtasks: PropTypes.object.isRequired,
+  };
+
+  static defaultProps = {
+    subtasks: {
+    },
+  }
+
   state = {
     nbsubtasks: 0,
   }
@@ -21,7 +31,7 @@ class Subtasks extends Component {
         </div>
         {Object.keys(subtasks).map((task, i) => (
           <SubtasksList
-            key={i}
+            index={i}
             task={task}
           />
         ))}
