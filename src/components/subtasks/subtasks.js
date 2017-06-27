@@ -12,11 +12,11 @@ class Subtasks extends Component {
   static defaultProps = {
     subtasks: {
     },
-  }
+  };
 
   state = {
     nbsubtasks: 0,
-  }
+  };
 
   render() {
     const { subtasks } = this.props;

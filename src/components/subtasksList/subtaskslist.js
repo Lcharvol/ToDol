@@ -1,8 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import './subtaskslist.css';
 
 class SubtasksList extends Component {
+
+  static propTypes = {
+    task: PropTypes.string.isRequired,
+  };
+
+  static defaultProps = {
+    task: 'undefined',
+  };
+
 
   state = {
     checked: false,

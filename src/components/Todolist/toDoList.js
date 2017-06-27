@@ -107,6 +107,8 @@ class toDoList extends Component {
           <div className="progressBar">
             <div className="progressBarInner" style={barStyle}>
               <div
+                role="switch"
+                aria-checked="true"
                 className="cursor"
                 onMouseDown={this.dragOn}
                 onMouseUp={this.dragOff}
