@@ -70,7 +70,7 @@ class toDoList extends Component {
   dragOff = () => { this.setState({ progDrag: false }); }
 
   render() {
-    const { props: { todo, since, fore, index, remove } } = this;
+    const { props: { todo, since, fore, index, remove, subtasks } } = this;
     const { checked, trashfocus, wrap, progress } = this.state;
     let barStyle = { width: `${progress}%` };
 
@@ -111,7 +111,9 @@ class toDoList extends Component {
             </div>
             <p className="progressScore">{Math.round(progress)}%</p>
           </div>
-          <Subtasks />
+          <Subtasks
+            subtasks={subtasks}
+          />
         </div>
       </div>
     );

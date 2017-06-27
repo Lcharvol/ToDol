@@ -27,12 +27,14 @@ class SubtasksList extends Component {
 
   render() {
     const { checked, trashfocus } = this.state;
+    const { task } = this.props;
 
     return (
       <div className="subtaskslist">
         <div role="checkbox" aria-checked="false" className="checkbox" onClick={this.gocheck}>
           <i className={checked ? 'fa fa-check check' : ''} aria-hidden="true" />
         </div>
+        <p>{task}</p>
         <div className="delete">
           <i
             className={trashfocus ? 'fa fa-trash poubelle' : 'fa fa-trash-o poubelle'}

@@ -5,6 +5,11 @@ const elemtodo = [
     since: '03/03/2017',
     done: 'no',
     id: 0,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Lesive',
@@ -12,6 +17,11 @@ const elemtodo = [
     since: '15/10/2017',
     done: 'no',
     id: 1,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Aller a la poste',
@@ -19,6 +29,11 @@ const elemtodo = [
     since: '25/09/2017',
     done: 'no',
     id: 2,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Courses',
@@ -26,6 +41,11 @@ const elemtodo = [
     since: '15/07/2016',
     done: 'no',
     id: 3,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Projet',
@@ -33,6 +53,11 @@ const elemtodo = [
     since: '01/01/2017',
     done: 'no',
     id: 4,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Courses',
@@ -40,6 +65,11 @@ const elemtodo = [
     since: '03/03/2017',
     done: 'no',
     id: 5,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Lesive',
@@ -47,6 +77,11 @@ const elemtodo = [
     since: '15/10/2017',
     done: 'no',
     id: 6,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Aller a la poste',
@@ -54,6 +89,11 @@ const elemtodo = [
     since: '25/09/2017',
     done: 'no',
     id: 7,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Courses',
@@ -61,6 +101,11 @@ const elemtodo = [
     since: '15/07/2016',
     done: 'no',
     id: 8,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Projet',
@@ -68,6 +113,11 @@ const elemtodo = [
     since: '01/01/2017',
     done: 'no',
     id: 9,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Courses',
@@ -75,6 +125,11 @@ const elemtodo = [
     since: '03/03/2017',
     done: 'no',
     id: 10,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Lesive',
@@ -82,6 +137,11 @@ const elemtodo = [
     since: '15/10/2017',
     done: 'no',
     id: 11,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Aller a la poste',
@@ -89,6 +149,11 @@ const elemtodo = [
     since: '25/09/2017',
     done: 'no',
     id: 12,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Courses',
@@ -96,6 +161,11 @@ const elemtodo = [
     since: '15/07/2016',
     done: 'no',
     id: 13,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
   {
     todo: 'Projet',
@@ -103,6 +173,11 @@ const elemtodo = [
     since: '01/01/2017',
     done: 'no',
     id: 14,
+    subtasks: {
+      Pate: 1,
+      Café: 1,
+      eau: 2,
+    },
   },
 ];
 

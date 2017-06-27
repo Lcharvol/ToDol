@@ -4,12 +4,13 @@ import SubtasksList from '../subtasksList';
 import './subtasks.css';
 
 class Subtasks extends Component {
-
   state = {
     nbsubtasks: 0,
   }
 
   render() {
+    const { subtasks } = this.props;
+
     return (
       <div className="subtasks_main">
         <div className="addsubtasks">
@@ -18,11 +19,12 @@ class Subtasks extends Component {
           </div>
           <p>Add a new subtask</p>
         </div>
-        <SubtasksList />
-        <SubtasksList />
-        <SubtasksList />
-        <SubtasksList />
-        <SubtasksList />
+        {Object.keys(subtasks).map((task, i) => (
+          <SubtasksList
+            key={i}
+            task={task}
+          />
+        ))}
       </div>
     );
   }

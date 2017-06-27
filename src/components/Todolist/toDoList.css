@@ -12,7 +12,7 @@
   height:65px;
   border-radius: 5px;
   background-color:white;
-  margin:12px;
+  margin-top:12px;
   text-align: left;
   transition: all 1s;
   overflow: hidden;
@@ -22,6 +22,12 @@
     0 1em 2em -0.75em rgba(150,150,150,0.1),
     0 1em 3em -0.5em rgba(150,150,150,0.1),
     0 3em 3em -0.25em rgba(150,150,150,0.1);
+}
+
+.unwraped
+{
+  height:auto;
+  transition: all 1s;
 }
 
 .to_do
@@ -133,11 +139,6 @@
 }
 .chev:hover{
   cursor:pointer;
-}
-.unwraped
-{
-  height:auto;
-  transition: all 1s;
 }
 .progressBar
 {
