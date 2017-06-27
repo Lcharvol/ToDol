@@ -2,23 +2,31 @@ import React, { Component, PropTypes } from 'react';
 
 import './addbox.css';
 
+
 class Addbox extends Component {
+
+
+  static propTypes = {
+    publish: PropTypes.func.isRequired,
+    affaddbox: PropTypes.func.isRequired,
+  }
 
   state = {
     value: '',
     date: '00/00/0000',
-  }
+  };
 
-  static propTypes = {
-    publish: PropTypes.func.isRequired,
-  }
-
-  handleChange = ({ target: { value } }) => {
+  handleChangeValue = ({ target: { value } }) => {
     this.setState({ value });
   };
 
-  handleSubmit = () => {
-    const { value, date } = this.state;
+  handleChangeDate = ({ target: { date } }) => {
+    console.log('coucou');
+    // this.setState({ value });
+  };
+
+  handleSubmit = ({ target: { date } }) => {
+    const { value } = this.state;
     const { publish } = this.props;
 
     if (value.length) {
@@ -28,22 +36,26 @@ class Addbox extends Component {
   }
 
   render() {
-    const { affaddbox, publish } = this.props;
+    const { affaddbox } = this.props;
     const { value } = this.state;
+
     return (
       <div className="addbox">
         <i className="fa fa-times cross fa-2x" aria-hidden="true" onClick={affaddbox} />
         <div className="addboxinner">
-          <h1>What I need to do: </h1>
+          <p className="formtext">What I need to do: </p>
           <textarea
             rows={1}
             placeholder=""
             className="todotext"
             spellCheck="false"
-            onChange={this.handleChange}
+            onChange={this.handleChangeValue}
           />
-          <h1>For: </h1>
-          <input type="date" name="for" />
+          <p className="formtext">For: </p>
+          <input
+            type="date"
+            name="for"
+          />
           <button
             type="button"
             className="validate"

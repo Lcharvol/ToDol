@@ -27,12 +27,12 @@ class Home extends Component {
     }
   };
 
-  publish = (value, date) => {
+  publish = (todo, date) => {
     const { list } = this.state;
 
     this.setState({
       list: [{
-        todo: value,
+        todo,
         fore: date,
         since: '15/10/2017',
         done: 'no',
@@ -45,19 +45,17 @@ class Home extends Component {
 
   render() {
     const { list, displaybox, close } = this.state;
+
     return (
       <div className="homepage">
-        <div className="todolist">
-          <Header />
-          {list.map((li, index) => (
-            <Todolist
-              key={index}
-              index={index}
-              remove={this.remove}
-              {...li}
-            />
+        <Header />
+        {list.map((li, index) => (
+          <Todolist
+            key={li.id}
+            remove={this.remove}
+            {...li}
+          />
           ))}
-        </div>
         <Buttonadd
           affaddbox={this.affaddbox}
         />

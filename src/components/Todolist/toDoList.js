@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
+import Subtasks from '../subtasks';
 import './toDoList.css';
 
 class toDoList extends Component {
@@ -57,7 +58,9 @@ class toDoList extends Component {
 
 
   gocheck = () => {
-    if (this.state.checked === false) { this.setState({ checked: true }); } else { this.setState({ checked: false }); }
+    if (this.state.checked === false) {
+      this.setState({ checked: true });
+    } else { this.setState({ checked: false }); }
   };
 
   dragOn = (e) => {
@@ -108,6 +111,7 @@ class toDoList extends Component {
             </div>
             <p className="progressScore">{Math.round(progress)}%</p>
           </div>
+          <Subtasks />
         </div>
       </div>
     );

@@ -36,17 +36,6 @@
   transform: rotate(90deg);
   transition: all 0.3s;
 }
-.todotext
-{
-  resize: none;
-  outline: none;
-  width: 70%;
-  border: none;
-  text-align: center;
-  color:rgb(59,210,174);
-  font-size: 1.5em;
-  background-color: rgb(243,243,243);
-}
 .validate
 {
   position: relative;
@@ -58,7 +47,7 @@
   margin:auto;
   padding-bottom:20px;
   color:white;
-  margin-top: 35px;
+  margin-top: 50px;
   font-size: 1em;
   padding-top: 6px;
   bottom: 25px;
@@ -76,10 +65,33 @@
 {
   cursor: pointer;
 }
-input[type="date"]::-webkit-calendar-picker-indicator{
-
-       background-position:center;
-       background-size:20px 20px;
-       background-repeat:no-repeat;
-      color:rgba(204,204,204,0);
+input[type="date"]{
+  text-align: center;
+  color:rgb(59,210,174);
+  background-color:rgb(243,243,243);
+  border:0;
+}
+input[type="date"]:focus{
+  outline:none;
+}
+.todotext
+{
+  resize: none;
+  outline: none;
+  width: 70%;
+  border: none;
+  text-align: center;
+  color:rgb(59,210,174);
+  font-size: 1.5em;
+  background-color: rgb(243,243,243);
+  margin-top:10px;
+}
+.formtext
+{
+  position: relative;
+  color:rgb(59,210,174);
+  margin:auto;
+  font-size:1.5em;
+  top:10px;
+  margin-bottom:20px;
 }
