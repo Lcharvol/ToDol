@@ -31,13 +31,16 @@
 .ResearchBar
 {
   display: inline-block;
-  width:88%;
-  background-color:rgb(243,243,243);
+  width:90%;
+  background-color:rgb(245,245,245);
   height:50px;
   margin-top:-10px;
   border:none;
   padding-right:15px;
   padding-left:15px;
+  font-size: 2em;
+  color:rgb(59,210,174);
+  border-radius: 3px;
 }
 
 .ResearchBar:focus{
@@ -50,7 +53,7 @@
   background-color: rgb(243,243,243);
   height:100%;
   width:65px;
-  margin-right:20px;
+  margin-right:10px;
   background-color:rgb(243,243,243);
   background: -webkit-linear-gradient(top left, rgb(59,210,174) , rgb(54,186,194));
   background: -o-linear-gradient(top left, rgb(59,210,174), rgb(54,186,194));
