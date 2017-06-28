@@ -67,7 +67,10 @@ class Subtasks extends Component {
             onClick={this.affOptionBox}
             aria-hidden="true"
           />
-          {displayOption && <Optionbox affOptionBox={this.affOptionBox} />}
+          <Optionbox
+            affOptionBox={this.affOptionBox}
+            displayOption={displayOption}
+          />
         </div>
         {Object.keys(subtasks).map((task, i) => (
           <SubtasksList

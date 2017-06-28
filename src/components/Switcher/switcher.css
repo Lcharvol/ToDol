@@ -1,7 +1,8 @@
 .switcher
 {
   display: inline-block;
-  width:100%;
+  width:30%;
+  float:right;
 }
 .switcherInner
 {
@@ -13,6 +14,7 @@
   border-radius: 100px;
   margin-top: 17px;
   margin-right:15px;
+  box-shadow: inset 5px 5px 10px 0px rgba(155,155,155,0.2);
 }
 .switcherCursor
 {
@@ -35,6 +37,7 @@
     0 1em 3em -0.5em rgba(150,150,150,0.1),
     0 1em 3em -0.25em rgba(150,150,150,0.2);
 }
+
 .switcherCursor:hover .switcherInner:hover
 {
   cursor: pointer;

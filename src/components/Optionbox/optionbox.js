@@ -6,13 +6,18 @@ import './optionbox.css';
 class Optionbox extends Component {
 
   render() {
-    const { affOptionBox } = this.props;
+    const { affOptionBox, displayOption } = this.props;
 
     return (
-      <div className="optionBox" onMouseLeave={affOptionBox}>
-        <div className="feuillet" />
+      <div
+        className={displayOption ? 'optionBox show' : 'optionBox hidden'}
+        onMouseLeave={affOptionBox}
+      >
+        <p>Option1: </p>
         <Switcher />
+        <p>Option2: </p>
         <Switcher />
+        <p>Option3: </p>
         <Switcher />
       </div>
     );
