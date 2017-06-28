@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import Todolist from '../../components/Todolist';
 import Buttonadd from '../../components/Buttonadd';
 import Addbox from '../../components/AddBox';
+import ResearchBox from '../../components/ResearchBox';
 import { list } from '../../Constants';
 import './Home.css';
 
@@ -49,6 +50,7 @@ class Home extends Component {
     return (
       <div className="homepage">
         <Header />
+        <ResearchBox />
         {list.map((li, index) => (
           <Todolist
             key={li.id}
