@@ -3,7 +3,7 @@
   position: absolute;
   top:15px;
   left:240px;
-  width:200px;
+  width:220px;
   padding-bottom: 12px;
   background-color:white;
   border-radius:5px;
@@ -15,11 +15,6 @@
     0 1em 2em -0.75em rgba(150,150,150,0.1),
     0 1em 3em -0.5em rgba(150,150,150,0.1),
     0 3em 3em -0.25em rgba(150,150,150,0.1);
-}
-
-.optionBox p
-{
-  display: inline-block;
 }
 
 .show

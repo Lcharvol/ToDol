@@ -1,8 +1,12 @@
 .switcher
 {
   display: inline-block;
-  width:30%;
+  width:100%;
   float:right;
+}
+.switcher p
+{
+  display: inline-block;
 }
 .switcherInner
 {
@@ -49,6 +53,11 @@
 .left
 {
   left:0px;
+  background-color: rgb(231, 76, 60);
+  background: -webkit-linear-gradient(top left, rgb(230, 126, 34), rgb(231, 76, 60));
+  background: -o-linear-gradient(top left, rgb(230, 126, 34), rgb(231, 76, 60));
+  background: -moz-linear-gradient(top left, rgb(230, 126, 34), rgb(231, 76, 60));
+  background: linear-gradient(top left, rgb(230, 126, 34), rgb(231, 76, 60));
 }
 .right
 {

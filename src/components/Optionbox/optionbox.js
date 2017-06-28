@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Switcher from '../Switcher';
 import './optionbox.css';
 
 class Optionbox extends Component {
+
+  static propTypes = {
+    affOptionBox: PropTypes.func.isRequired,
+    displayOption: PropTypes.func.isRequired,
+  };
 
   render() {
     const { affOptionBox, displayOption } = this.props;
@@ -13,12 +18,15 @@ class Optionbox extends Component {
         className={displayOption ? 'optionBox show' : 'optionBox hidden'}
         onMouseLeave={affOptionBox}
       >
-        <p>Option1: </p>
-        <Switcher />
-        <p>Option2: </p>
-        <Switcher />
-        <p>Option3: </p>
-        <Switcher />
+        <Switcher
+          name="Option1"
+        />
+        <Switcher
+          name="Option2"
+        />
+        <Switcher
+          name="Option3"
+        />
       </div>
     );
   }
