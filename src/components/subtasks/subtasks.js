@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import SubtasksList from '../subtasksList';
 import Switcher from '../Switcher';
+import Optionbox from '../Optionbox';
 import './subtasks.css';
 
 class Subtasks extends Component {
@@ -66,13 +67,7 @@ class Subtasks extends Component {
             onClick={this.affOptionBox}
             aria-hidden="true"
           />
-          {displayOption &&
-            <div className="optionBox">
-              <Switcher />
-              <Switcher />
-              <Switcher />
-            </div>
-            }
+          {displayOption && <Optionbox affOptionBox={this.affOptionBox} />}
         </div>
         {Object.keys(subtasks).map((task, i) => (
           <SubtasksList
