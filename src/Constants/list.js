@@ -18,9 +18,6 @@ const elemtodo = [
     done: 'no',
     id: 1,
     subtasks: {
-      Pate: 1,
-      Café: 1,
-      eau: 2,
     },
   },
   {

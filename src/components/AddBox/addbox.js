@@ -40,7 +40,7 @@ class Addbox extends Component {
 
     return (
       <div className="addbox">
-        <i className="fa fa-times cross fa-2x" aria-hidden="true" onClick={affaddbox} />
+        <i className="fa fa-times cross fa-3x" aria-hidden="true" onClick={affaddbox} />
         <div className="addboxinner">
           <p className="formtext">What I need to do: </p>
           <textarea
