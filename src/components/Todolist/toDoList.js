@@ -35,6 +35,8 @@ class toDoList extends Component {
     startDrag: 0,
     optionfocus: false,
     displayOption: false,
+    displayProgressBar: true,
+    displaySubtasks: true,
   }
 
   componentDidMount = () => {

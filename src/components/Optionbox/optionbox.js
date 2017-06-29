@@ -19,6 +19,17 @@ class Optionbox extends Component {
     Option3: "Option3",
   }
 
+  state = {
+    state1: false,
+    state2: false,
+    state3: false,
+  }
+
+  handleChangeState = (name) =>
+  {
+    console.log(name);
+  }
+
   render() {
     const { affOptionBox, displayOption, Option1, Option2, Option3 } = this.props;
 
@@ -29,12 +40,15 @@ class Optionbox extends Component {
       >
         <Switcher
           name={Option1}
+          handleChangeState={this.handleChangeState}
         />
         <Switcher
           name={Option2}
+          handleChangeState={this.handleChangeState}
         />
         <Switcher
           name={Option3}
+          handleChangeState={this.handleChangeState}
         />
       </div>
     );

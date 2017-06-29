@@ -6,6 +6,7 @@ class Switcher extends Component {
 
   static propTypes = {
     name: PropTypes.string.isRequired,
+    handleChangeState: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -17,11 +18,14 @@ class Switcher extends Component {
   }
 
   handleChangeValue = () => {
+    const { handleChangeState, name } = this.props;
+
     if (this.state.value === false) {
       this.setState({ value: true });
     } else {
       this.setState({ value: false });
     }
+    handleChangeState(name);
   }
 
   render() {
