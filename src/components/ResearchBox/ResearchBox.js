@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import './ResearchBox.css';
 
 class ResearchBox extends Component {
 
+  static propTypes = {
+    research: PropTypes.func.isRequired,
+  };
+
   render() {
+    const { research } = this.props;
+
     return (
       <div className="ResearchBox">
         <div className="loupeElem">
@@ -15,6 +21,8 @@ class ResearchBox extends Component {
           placeholder="Research.."
           name="Research"
           className="ResearchBar"
+          spellCheck="false"
+          onChange={research}
         />
       </div>
     );

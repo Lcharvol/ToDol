@@ -44,13 +44,19 @@ class Home extends Component {
     });
   };
 
+  research = () => {
+    console.log('coucou');
+  }
+
   render() {
     const { list, displaybox, close } = this.state;
 
     return (
       <div className="homepage">
         <Header />
-        <ResearchBox />
+        <ResearchBox
+          research={this.research}
+        />
         {list.map((li, index) => (
           <Todolist
             key={li.id}
