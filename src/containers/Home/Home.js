@@ -13,6 +13,7 @@ class Home extends Component {
   state = {
     list,
     displaybox: false,
+    research: '',
   };
 
   remove = (index) => {
@@ -44,13 +45,14 @@ class Home extends Component {
     });
   };
 
-  research = () => {
-    console.log('coucou');
+  research = (value) => {
+    this.setState({research: value});
   }
 
   render() {
-    const { list, displaybox, close } = this.state;
+    const { list, displaybox, research } = this.state;
 
+    console.log(research);
     return (
       <div className="homepage">
         <Header />

@@ -8,8 +8,19 @@ class ResearchBox extends Component {
     research: PropTypes.func.isRequired,
   };
 
-  render() {
+  state = {
+    value: ''
+  }
+
+  handleChangeResearch = ({ target: { value } }) => {
     const { research } = this.props;
+
+    this.setState({ value });
+    research(value);
+  };
+
+  render() {
+    const { value } = this.state;
 
     return (
       <div className="ResearchBox">
@@ -22,7 +33,7 @@ class ResearchBox extends Component {
           name="Research"
           className="ResearchBar"
           spellCheck="false"
-          onChange={research}
+          onChange={this.handleChangeResearch}
         />
       </div>
     );
