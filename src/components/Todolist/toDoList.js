@@ -12,6 +12,7 @@ class toDoList extends Component {
     remove: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
     subtasks: PropTypes.object.isRequired,
+    research: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -19,6 +20,7 @@ class toDoList extends Component {
     since: '00/00/0000',
     fore: '00/00/0000',
     index: 0,
+    research: '',
     subtasks: {
     },
   }
@@ -72,15 +74,23 @@ class toDoList extends Component {
   }
   dragOff = () => { this.setState({ progDrag: false }); }
 
+  researchMatch = (research, todo) => {
+    if (research === todo || research === '')
+      return (true);
+      else {
+        return(false);
+      }
+  }
+
   render() {
-    const { props: { todo, since, fore, index, remove, subtasks } } = this;
+    const { props: { todo, since, fore, index, remove, subtasks, research } } = this;
     const { checked, trashfocus, wrap, progress } = this.state;
     let barStyle = { width: `${progress}%` };
 
     if (progress < 3) { barStyle = { width: '3%' }; }
 
     return (
-      <div className="toDoList">
+      <div className={this.researchMatch(research, todo) ? 'toDoList' : 'toDoList hiddenlist'}>
         <div className={wrap ? 'toDoListElem unwraped' : 'toDoListElem'}>
           <div role="checkbox" aria-checked="false" className="checkbox" onClick={this.gocheck}>
             <i className={checked ? 'fa fa-check check' : ''} aria-hidden="true" />

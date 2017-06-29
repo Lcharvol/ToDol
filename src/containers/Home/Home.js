@@ -52,7 +52,6 @@ class Home extends Component {
   render() {
     const { list, displaybox, research } = this.state;
 
-    console.log(research);
     return (
       <div className="homepage">
         <Header />
@@ -63,6 +62,7 @@ class Home extends Component {
           <Todolist
             key={li.id}
             remove={this.remove}
+            research={research}
             {...li}
           />
           ))}

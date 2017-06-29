@@ -192,3 +192,7 @@
   -o-user-select: none;
   user-select: none;
 }
+.hiddenlist
+{
+  display: none;
+}
