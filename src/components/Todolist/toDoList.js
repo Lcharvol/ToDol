@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import Subtasks from '../subtasks';
+import Optionbox from '../Optionbox';
 import './toDoList.css';
 
 class toDoList extends Component {
@@ -32,6 +33,8 @@ class toDoList extends Component {
     progress: 0,
     progDrag: false,
     startDrag: 0,
+    optionfocus: false,
+    displayOption: false,
   }
 
   componentDidMount = () => {
@@ -75,16 +78,32 @@ class toDoList extends Component {
   dragOff = () => { this.setState({ progDrag: false }); }
 
   researchMatch = (research, todo) => {
-    if (research === todo || research === '')
+    if (todo.toUpperCase().match(research.toUpperCase()))
       return (true);
       else {
         return(false);
       }
   }
 
+  handleChangeOption = () => {
+    if (this.state.optionfocus === false) {
+      this.setState({ optionfocus: true });
+    } else {
+      this.setState({ optionfocus: false });
+    }
+  }
+
+  affOptionBox = () => {
+    if (this.state.displayOption === false) {
+      this.setState({ displayOption: true });
+    } else {
+      this.setState({ displayOption: false });
+    }
+  }
+
   render() {
     const { props: { todo, since, fore, index, remove, subtasks, research } } = this;
-    const { checked, trashfocus, wrap, progress } = this.state;
+    const { checked, trashfocus, wrap, progress, optionfocus, displayOption } = this.state;
     let barStyle = { width: `${progress}%` };
 
     if (progress < 3) { barStyle = { width: '3%' }; }
@@ -98,6 +117,13 @@ class toDoList extends Component {
           <p className="to_do">{todo}</p>
           <p className="since">Since: {since}</p>
           <p className="fore">For: {fore}</p>
+          <i
+            className={optionfocus ? 'fa fa-cog optionhover' : 'fa fa-cog option'}
+            onMouseEnter={this.handleChangeOption}
+            onMouseLeave={this.handleChangeOption}
+            onClick={this.affOptionBox}
+            aria-hidden="true"
+          />
           <div className="more">
             <i
               className={wrap ? 'fa fa-chevron-up chev' : 'fa fa-chevron-down chev'}
@@ -130,6 +156,10 @@ class toDoList extends Component {
             subtasks={subtasks}
           />
         </div>
+        <Optionbox
+          affOptionBox={this.affOptionBox}
+          displayOption={displayOption}
+        />
       </div>
     );
   }
