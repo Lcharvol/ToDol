@@ -18,25 +18,7 @@ class Subtasks extends Component {
 
   state = {
     subtasks: '',
-    optionfocus: false,
-    displayOption: false,
   };
-
-  handleChangeOption = () => {
-    if (this.state.optionfocus === false) {
-      this.setState({ optionfocus: true });
-    } else {
-      this.setState({ optionfocus: false });
-    }
-  }
-
-  affOptionBox = () => {
-    if (this.state.displayOption === false) {
-      this.setState({ displayOption: true });
-    } else {
-      this.setState({ displayOption: false });
-    }
-  }
 
   addnewsubtask = () => {
     const { subtasks } = this.state;
@@ -51,7 +33,7 @@ class Subtasks extends Component {
   }
 
   render() {
-    const { optionfocus, displayOption, subtasks } = this.state;
+    const { subtasks } = this.state;
 
     return (
       <div className="subtasks_main">
@@ -60,17 +42,6 @@ class Subtasks extends Component {
             <i className="fa fa-plus plustask" aria-hidden="true" />
           </div>
           <p>Add a new subtask</p>
-          <i
-            className={optionfocus ? 'fa fa-cog optionhover' : 'fa fa-cog option'}
-            onMouseEnter={this.handleChangeOption}
-            onMouseLeave={this.handleChangeOption}
-            onClick={this.affOptionBox}
-            aria-hidden="true"
-          />
-          <Optionbox
-            affOptionBox={this.affOptionBox}
-            displayOption={displayOption}
-          />
         </div>
         {Object.keys(subtasks).map((task, i) => (
           <SubtasksList

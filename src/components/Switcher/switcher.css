@@ -7,6 +7,7 @@
 .switcher p
 {
   display: inline-block;
+  color:rgb(59,210,174);
 }
 .switcherInner
 {
@@ -53,11 +54,11 @@
 .left
 {
   left:0px;
-  background-color: rgb(231, 76, 60);
-  background: -webkit-linear-gradient(top left, rgb(230, 126, 34), rgb(231, 76, 60));
-  background: -o-linear-gradient(top left, rgb(230, 126, 34), rgb(231, 76, 60));
-  background: -moz-linear-gradient(top left, rgb(230, 126, 34), rgb(231, 76, 60));
-  background: linear-gradient(top left, rgb(230, 126, 34), rgb(231, 76, 60));
+  background-color:#BBE5DB;
+  background: -webkit-linear-gradient(top left,#BBE5DB, rgb(54,186,194));
+  background: -o-linear-gradient(top left,#BBE5DB, rgb(54,186,194));
+  background: -moz-linear-gradient(top left,#BBE5DB, rgb(54,186,194));
+  background: linear-gradient(top left,#BBE5DB, rgb(54,186,194));
 }
 .right
 {

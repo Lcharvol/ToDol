@@ -159,6 +159,8 @@ class toDoList extends Component {
         <Optionbox
           affOptionBox={this.affOptionBox}
           displayOption={displayOption}
+          Option1="Progress Bar"
+          Option2="Subtasks"
         />
       </div>
     );
