@@ -8,30 +8,29 @@ class Optionbox extends Component {
   static propTypes = {
     affOptionBox: PropTypes.func.isRequired,
     displayOption: PropTypes.func.isRequired,
-    Option1: PropTypes.string.isRequired,
-    Option2: PropTypes.string.isRequired,
-    Option3: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
-    Option1: "Option1",
-    Option2: "Option2",
-    Option3: "Option3",
   }
 
   state = {
-    state1: false,
-    state2: false,
-    state3: false,
+    Option1: false,
+    Option2: false,
+    Option3: false,
   }
 
   handleChangeState = (name) =>
   {
-    console.log(name);
+    const { displayProgressBar, displaySubtasks} = this.props;
+
+    if (name === "Option1")
+      displayProgressBar();
+    if (name === "Option2")
+      displaySubtasks();
   }
 
   render() {
-    const { affOptionBox, displayOption, Option1, Option2, Option3 } = this.props;
+    const { affOptionBox, displayOption} = this.props;
 
     return (
       <div
@@ -39,15 +38,17 @@ class Optionbox extends Component {
         onMouseLeave={affOptionBox}
       >
         <Switcher
-          name={Option1}
+          name="Option1"
+          text="Progress Bar"
           handleChangeState={this.handleChangeState}
         />
         <Switcher
-          name={Option2}
+          name="Option2"
+          text="Subtasks"
           handleChangeState={this.handleChangeState}
         />
         <Switcher
-          name={Option3}
+          name="Option3"
           handleChangeState={this.handleChangeState}
         />
       </div>

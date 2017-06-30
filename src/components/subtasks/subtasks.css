@@ -2,7 +2,7 @@
 {
   position: relative;
   margin: auto;
-  margin-top:35px;
+  margin-top:10px;
   margin-bottom: 25px;
   padding-top: 10px;
   padding-bottom: 15px;
@@ -64,14 +64,4 @@
   color:rgb(243,243,243);
   margin-left:7px;
   top:1px;
-}
-.option
-{
-  color:  rgb(59,210,174);
-  display: inline-block;
-}
-.optionhover
-{
-  cursor: pointer;
-  color:rgb(54,186,194);
 }

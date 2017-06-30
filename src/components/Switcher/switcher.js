@@ -6,15 +6,17 @@ class Switcher extends Component {
 
   static propTypes = {
     name: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
     handleChangeState: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     name: 'Option',
+    text: 'Option',
   }
 
   state = {
-    value: false,
+    value: true,
   }
 
   handleChangeValue = () => {
@@ -30,11 +32,11 @@ class Switcher extends Component {
 
   render() {
     const { value } = this.state;
-    const { name } = this.props;
+    const { name, text } = this.props;
 
     return (
       <div className="switcher">
-        <p>{name}:{value ? '  On' : '  Off'}</p>
+        <p>{text}:{value ? '  On' : '  Off'}</p>
         <div className="switcherInner" onClick={this.handleChangeValue}>
           <div className={value ? 'switcherCursor right' : 'switcherCursor left'} />
         </div>

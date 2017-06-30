@@ -103,9 +103,25 @@ class toDoList extends Component {
     }
   }
 
+  displayProgressBar = () => {
+    if (this.state.displayProgressBar === false) {
+      this.setState({ displayProgressBar: true });
+    } else {
+      this.setState({ displayProgressBar: false });
+    }
+  }
+
+  displaySubtasks = () => {
+    if (this.state.displaySubtasks === false) {
+      this.setState({ displaySubtasks: true });
+    } else {
+      this.setState({ displaySubtasks: false });
+    }
+  }
+
   render() {
     const { props: { todo, since, fore, index, remove, subtasks, research } } = this;
-    const { checked, trashfocus, wrap, progress, optionfocus, displayOption } = this.state;
+    const { checked, trashfocus, wrap, progress, optionfocus, displayOption, displayProgressBar, displaySubtasks } = this.state;
     let barStyle = { width: `${progress}%` };
 
     if (progress < 3) { barStyle = { width: '3%' }; }
@@ -119,20 +135,22 @@ class toDoList extends Component {
           <p className="to_do">{todo}</p>
           <p className="since">Since: {since}</p>
           <p className="fore">For: {fore}</p>
-          <i
-            className={optionfocus ? 'fa fa-cog optionhover' : 'fa fa-cog option'}
-            onMouseEnter={this.handleChangeOption}
-            onMouseLeave={this.handleChangeOption}
-            onClick={this.affOptionBox}
-            aria-hidden="true"
-          />
-          <div className="more">
+          <div className="option_elem">
+            <i
+              className={optionfocus ? 'fa fa-cog optionhover' : 'fa fa-cog option'}
+              onMouseEnter={this.handleChangeOption}
+              onMouseLeave={this.handleChangeOption}
+              onClick={this.affOptionBox}
+              aria-hidden="true"
+            />
+          </div>
+          {displaySubtasks && displayProgressBar && <div className="more">
             <i
               className={wrap ? 'fa fa-chevron-up chev' : 'fa fa-chevron-down chev'}
               aria-hidden="true"
               onClick={this.affmore}
             />
-          </div>
+          </div>}
           <div className="delete">
             <i
               className={trashfocus ? 'fa fa-trash poubelle' : 'fa fa-trash-o poubelle'}
@@ -142,27 +160,31 @@ class toDoList extends Component {
               onClick={() => remove(index)}
             />
           </div>
+          {displayProgressBar &&
+            <div className="progressElem">
           <div className="progressBar">
             <div className="progressBarInner" style={barStyle}>
               <div
+                className="cursor"
                 role="switch"
                 aria-checked="true"
-                className="cursor"
                 onMouseDown={this.dragOn}
                 onMouseUp={this.dragOff}
               />
             </div>
+            </div>
             <p className="progressScore">{Math.round(progress)}%</p>
           </div>
-          <Subtasks
+          }
+          {displaySubtasks && <Subtasks
             subtasks={subtasks}
-          />
+          />}
         </div>
         <Optionbox
           affOptionBox={this.affOptionBox}
           displayOption={displayOption}
-          Option1="Progress Bar"
-          Option2="Subtasks"
+          displayProgressBar = {this.displayProgressBar}
+          displaySubtasks = {this.displaySubtasks}
         />
       </div>
     );
