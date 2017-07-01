@@ -37,6 +37,7 @@ class toDoList extends Component {
     displayOption: false,
     displayProgressBar: true,
     displaySubtasks: true,
+    displayArrow: true,
   }
 
   componentDidMount = () => {
@@ -111,6 +112,14 @@ class toDoList extends Component {
     }
   }
 
+  displayArrow = () => {
+    if (this.state.displayArrow === false) {
+      this.setState({ displayArrow: true });
+    } else {
+      this.setState({ displayArrow: false });
+    }
+  }
+
   displaySubtasks = () => {
     if (this.state.displaySubtasks === false) {
       this.setState({ displaySubtasks: true });
@@ -121,7 +130,7 @@ class toDoList extends Component {
 
   render() {
     const { props: { todo, since, fore, index, remove, subtasks, research } } = this;
-    const { checked, trashfocus, wrap, progress, optionfocus, displayOption, displayProgressBar, displaySubtasks } = this.state;
+    const { checked, trashfocus, wrap, progress, optionfocus, displayOption, displayProgressBar, displaySubtasks, displayArrow } = this.state;
     let barStyle = { width: `${progress}%` };
 
     if (progress < 3) { barStyle = { width: '3%' }; }
@@ -144,7 +153,7 @@ class toDoList extends Component {
               aria-hidden="true"
             />
           </div>
-          {displaySubtasks && displayProgressBar && <div className="more">
+          {displayArrow && <div className="more">
             <i
               className={wrap ? 'fa fa-chevron-up chev' : 'fa fa-chevron-down chev'}
               aria-hidden="true"
@@ -161,21 +170,20 @@ class toDoList extends Component {
             />
           </div>
           {displayProgressBar &&
-            <div className="progressElem">
-          <div className="progressBar">
-            <div className="progressBarInner" style={barStyle}>
-              <div
-                className="cursor"
-                role="switch"
-                aria-checked="true"
-                onMouseDown={this.dragOn}
-                onMouseUp={this.dragOff}
-              />
-            </div>
+          <div className="progressElem">
+            <div className="progressBar">
+              <div className="progressBarInner" style={barStyle}>
+                <div
+                  className="cursor"
+                  role="switch"
+                  aria-checked="true"
+                  onMouseDown={this.dragOn}
+                  onMouseUp={this.dragOff}
+                />
+              </div>
             </div>
             <p className="progressScore">{Math.round(progress)}%</p>
-          </div>
-          }
+          </div>}
           {displaySubtasks && <Subtasks
             subtasks={subtasks}
           />}
@@ -185,6 +193,7 @@ class toDoList extends Component {
           displayOption={displayOption}
           displayProgressBar = {this.displayProgressBar}
           displaySubtasks = {this.displaySubtasks}
+          displayArrow= {this.displayArrow}
         />
       </div>
     );

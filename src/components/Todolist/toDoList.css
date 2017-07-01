@@ -28,6 +28,7 @@
 .unwraped
 {
   height:auto;
+  min-height:65px;
   transition: all 1s;
 }
 

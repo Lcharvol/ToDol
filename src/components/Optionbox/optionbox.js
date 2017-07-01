@@ -8,6 +8,7 @@ class Optionbox extends Component {
   static propTypes = {
     affOptionBox: PropTypes.func.isRequired,
     displayOption: PropTypes.func.isRequired,
+    displayArrow: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -21,12 +22,28 @@ class Optionbox extends Component {
 
   handleChangeState = (name) =>
   {
-    const { displayProgressBar, displaySubtasks} = this.props;
+    const { displayProgressBar, displaySubtasks, displayArrow} = this.props;
 
     if (name === "Option1")
+    {
+      if (this.state.Option1 === true) {
+        this.setState({ Option1: false} )
+      } else {
+        this.setState( {Option1: true} )
+      }
       displayProgressBar();
+    }
     if (name === "Option2")
+    {
+      if (this.state.Option2 === true) {
+        this.setState({ Option2: false} )
+      } else {
+        this.setState( {Option2: true} )
+      }
       displaySubtasks();
+    }
+    if (this.state.Option1 === false && this.state.Option2 === false)
+      displayArrow();
   }
 
   render() {
