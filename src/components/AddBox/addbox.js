@@ -55,6 +55,10 @@ class Addbox extends Component {
             type="date"
             name="for"
           />
+          <p>Use a progress bar?</p>
+          <input type="checkbox" id="cbox1" value="checkbox1"/>
+          <p>Use subtasks?</p>
+          <input type="checkbox" id="cbox1" value="checkbox1"/>
           <button
             type="button"
             className="validate"

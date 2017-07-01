@@ -5,6 +5,14 @@
   background-color: rgba(0,0,0,0.3);
   top:0;
 }
+.addbox p
+{
+    color:rgb(59,210,174);
+}
+.addbox input
+{
+  display: inline-block;
+}
 .addboxinner
 {
   position: relative;
