@@ -15,35 +15,51 @@ class Optionbox extends Component {
   }
 
   state = {
-    Option1: false,
-    Option2: false,
-    Option3: false,
+    Option1: true,
+    Option2: true,
+  }
+
+  test = () => {
+    const { Option1, Option2 } = this.state;
+    console.log(this.state.Option1);
+    console.log(this.state.Option2);
   }
 
   handleChangeState = (name) =>
   {
     const { displayProgressBar, displaySubtasks, displayArrow} = this.props;
+    const { Option1, Option2 } = this.state;
 
     if (name === "Option1")
     {
-      if (this.state.Option1 === true) {
-        this.setState({ Option1: false} )
+      if (Option1 === true) {
+        this.setState({ Option1: false}, () => {
+          if (this.state.Option2 === false)
+            displayArrow();
+        })
       } else {
-        this.setState( {Option1: true} )
+        this.setState( {Option1: true}, () => {
+          if (this.state.Option2 === false)
+            displayArrow();
+        })
       }
       displayProgressBar();
     }
     if (name === "Option2")
     {
-      if (this.state.Option2 === true) {
-        this.setState({ Option2: false} )
+      if (Option2 === true) {
+        this.setState({ Option2: false}, () => {
+          if (this.state.Option1 === false)
+            displayArrow();
+        })
       } else {
-        this.setState( {Option2: true} )
+        this.setState( {Option2: true}, () => {
+          if (this.state.Option1 === false)
+            displayArrow();
+        })
       }
       displaySubtasks();
     }
-    if (this.state.Option1 === false && this.state.Option2 === false)
-      displayArrow();
   }
 
   render() {
@@ -58,14 +74,11 @@ class Optionbox extends Component {
           name="Option1"
           text="Progress Bar"
           handleChangeState={this.handleChangeState}
+          onClick={this.handleChangeArrow}
         />
         <Switcher
           name="Option2"
           text="Subtasks"
-          handleChangeState={this.handleChangeState}
-        />
-        <Switcher
-          name="Option3"
           handleChangeState={this.handleChangeState}
         />
       </div>
