@@ -127,7 +127,7 @@
 .more
 {
   position: absolute;
-  right:50px;
+  right:100px;
   top:2px;
   width:50px;
   height:60px;
@@ -206,7 +206,7 @@
 }
 .option_elem{
   position: absolute;
-  right:100px;
+  right:50px;
   top:2px;
   width:50px;
   height:60px;

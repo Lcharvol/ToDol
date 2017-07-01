@@ -15,14 +15,8 @@ class Optionbox extends Component {
   }
 
   state = {
-    Option1: true,
-    Option2: true,
-  }
-
-  test = () => {
-    const { Option1, Option2 } = this.state;
-    console.log(this.state.Option1);
-    console.log(this.state.Option2);
+    Option1: false,
+    Option2: false,
   }
 
   handleChangeState = (name) =>

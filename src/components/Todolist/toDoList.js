@@ -35,9 +35,9 @@ class toDoList extends Component {
     startDrag: 0,
     optionfocus: false,
     displayOption: false,
-    displayProgressBar: true,
-    displaySubtasks: true,
-    displayArrow: true,
+    displayProgressBar: false,
+    displaySubtasks: false,
+    displayArrow: false,
   }
 
   componentDidMount = () => {
@@ -144,6 +144,13 @@ class toDoList extends Component {
           <p className="to_do">{todo}</p>
           <p className="since">Since: {since}</p>
           <p className="fore">For: {fore}</p>
+          {displayArrow && <div className="more">
+            <i
+              className={wrap ? 'fa fa-chevron-up chev' : 'fa fa-chevron-down chev'}
+              aria-hidden="true"
+              onClick={this.affmore}
+            />
+          </div>}
           <div className="option_elem">
             <i
               className={optionfocus ? 'fa fa-cog optionhover' : 'fa fa-cog option'}
@@ -153,13 +160,6 @@ class toDoList extends Component {
               aria-hidden="true"
             />
           </div>
-          {displayArrow && <div className="more">
-            <i
-              className={wrap ? 'fa fa-chevron-up chev' : 'fa fa-chevron-down chev'}
-              aria-hidden="true"
-              onClick={this.affmore}
-            />
-          </div>}
           <div className="delete">
             <i
               className={trashfocus ? 'fa fa-trash poubelle' : 'fa fa-trash-o poubelle'}

@@ -16,7 +16,7 @@ class Switcher extends Component {
   }
 
   state = {
-    value: true,
+    value: false,
   }
 
   handleChangeValue = () => {
@@ -37,7 +37,9 @@ class Switcher extends Component {
     return (
       <div className="switcher">
         <p>{text}:{value ? '  On' : '  Off'}</p>
-        <div className="switcherInner" onClick={this.handleChangeValue}>
+        <div
+          className="switcherInner"
+          onClick={this.handleChangeValue}>
           <div className={value ? 'switcherCursor right' : 'switcherCursor left'} />
         </div>
       </div>
