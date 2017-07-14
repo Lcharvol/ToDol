@@ -8,7 +8,11 @@ const Buttonadd = ({ affaddbox }) => {
   };
 
   return (
-    <div className="TodolistBox" onClick={affaddbox}>
+    <div
+      className="TodolistBox"
+      onClick={affaddbox}
+      role="button"
+    >
       <i className="fa fa-plus fa-3x plus" aria-hidden="true" />
     </div>
   );

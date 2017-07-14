@@ -22,8 +22,7 @@ class Home extends Component {
 
   remove = (index) => {
     const { list } = this.state;
-    this.setState({ list: list.filter((li, i) => i !== index) });
-    console.log(list);
+    this.setState({ list: list.filter((li) => li.id !== index) });
   };
 
   affaddbox = () => {

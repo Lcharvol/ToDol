@@ -6,6 +6,8 @@ import './optionbox.css';
 class Optionbox extends Component {
 
   static propTypes = {
+    affOptionBox: PropTypes.func.isRequired,
+    displayOption: PropTypes.bool.isRequired,
     displayArrow: PropTypes.func.isRequired,
     displayProgressBar: PropTypes.func.isRequired,
     displaySubtasks: PropTypes.func.isRequired,
