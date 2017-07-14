@@ -16,9 +16,14 @@ class Home extends Component {
     research: '',
   };
 
+  componentWillMount = () => {
+
+  }
+
   remove = (index) => {
     const { list } = this.state;
     this.setState({ list: list.filter((li, i) => i !== index) });
+    console.log(list);
   };
 
   affaddbox = () => {
@@ -46,7 +51,7 @@ class Home extends Component {
   };
 
   research = (value) => {
-    this.setState({research: value});
+    this.setState({ research: value });
   }
 
   render() {
@@ -60,7 +65,6 @@ class Home extends Component {
         />
         {list.map((li, index) => (
           <Todolist
-            key={li.id}
             remove={this.remove}
             research={research}
             {...li}

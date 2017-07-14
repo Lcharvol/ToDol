@@ -11,7 +11,7 @@ class toDoList extends Component {
     since: PropTypes.string.isRequired,
     fore: PropTypes.string.isRequired,
     remove: PropTypes.func.isRequired,
-    index: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
     subtasks: PropTypes.object.isRequired,
     research: PropTypes.string.isRequired,
   };
@@ -20,7 +20,7 @@ class toDoList extends Component {
     todo: 'Null',
     since: '00/00/0000',
     fore: '00/00/0000',
-    index: 0,
+    id: 0,
     research: '',
     subtasks: {
     },
@@ -81,11 +81,9 @@ class toDoList extends Component {
   dragOff = () => { this.setState({ progDrag: false }); }
 
   researchMatch = (research, todo) => {
-    if (todo.toUpperCase().match(research.toUpperCase()))
-      return (true);
-      else {
-        return(false);
-      }
+    if (todo.toUpperCase().match(research.toUpperCase())) { return (true); }
+
+    return (false);
   }
 
   handleChangeOption = () => {
@@ -129,9 +127,12 @@ class toDoList extends Component {
   }
 
   render() {
-    const { props: { todo, since, fore, index, remove, subtasks, research } } = this;
+    const { props: { todo, fore, since, id, subtasks, remove, research } } = this;
     const { checked, trashfocus, wrap, progress, optionfocus, displayOption, displayProgressBar, displaySubtasks, displayArrow } = this.state;
-    let barStyle = { width: `${progress}%` };
+
+    let barStyle = {
+      width: `${progress}%`,
+    };
 
     if (progress < 3) { barStyle = { width: '3%' }; }
 
@@ -166,7 +167,7 @@ class toDoList extends Component {
               aria-hidden="true"
               onMouseEnter={this.handletrashfocus}
               onMouseLeave={this.handletrashfocus}
-              onClick={() => remove(index)}
+              onClick={() => remove(id)}
             />
           </div>
           {displayProgressBar &&
@@ -191,9 +192,9 @@ class toDoList extends Component {
         <Optionbox
           affOptionBox={this.affOptionBox}
           displayOption={displayOption}
-          displayProgressBar = {this.displayProgressBar}
-          displaySubtasks = {this.displaySubtasks}
-          displayArrow= {this.displayArrow}
+          displayProgressBar={this.displayProgressBar}
+          displaySubtasks={this.displaySubtasks}
+          displayArrow={this.displayArrow}
         />
       </div>
     );
