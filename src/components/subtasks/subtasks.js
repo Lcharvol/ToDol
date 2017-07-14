@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
 import SubtasksList from '../subtasksList';
-import Switcher from '../Switcher';
-import Optionbox from '../Optionbox';
 import './subtasks.css';
 
 class Subtasks extends Component {

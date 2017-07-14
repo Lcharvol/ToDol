@@ -59,10 +59,10 @@
   font-size: 1em;
   padding-top: 6px;
   bottom: 25px;
-  background: -webkit-linear-gradient(top left, rgb(59,210,174) , rgb(54,186,194));
-  background: -o-linear-gradient(top left, rgb(59,210,174), rgb(54,186,194));
-  background: -moz-linear-gradient(top left, rgb(59,210,174), rgb(54,186,194));
-  background: linear-gradient(top left, rgb(59,210,174), rgb(54,186,194));
+  background: -webkit-linear-gradient(to top left, rgb(59,210,174) , rgb(54,186,194));
+  background: -o-linear-gradient(to top left, rgb(59,210,174), rgb(54,186,194));
+  background: -moz-linear-gradient(to top left, rgb(59,210,174), rgb(54,186,194));
+  background: linear-gradient(to top left, rgb(59,210,174), rgb(54,186,194));
   box-shadow: inset 0 7em 10em -5em rgba(255,255,255,0.3);
 }
 .validate:focus

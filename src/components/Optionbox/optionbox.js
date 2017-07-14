@@ -6,9 +6,9 @@ import './optionbox.css';
 class Optionbox extends Component {
 
   static propTypes = {
-    affOptionBox: PropTypes.func.isRequired,
-    displayOption: PropTypes.func.isRequired,
     displayArrow: PropTypes.func.isRequired,
+    displayProgressBar: PropTypes.func.isRequired,
+    displaySubtasks: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -19,48 +19,42 @@ class Optionbox extends Component {
     Option2: false,
   }
 
-  handleChangeState = (name) =>
-  {
-    const { displayProgressBar, displaySubtasks, displayArrow} = this.props;
+  handleChangeState = (name) => {
+    const { displayProgressBar, displaySubtasks, displayArrow } = this.props;
     const { Option1, Option2 } = this.state;
 
-    if (name === "Option1")
-    {
+    if (name === 'Option1') {
       if (Option1 === true) {
-        this.setState({ Option1: false}, () => {
-          if (this.state.Option2 === false)
-            displayArrow();
-        })
+        this.setState({ Option1: false }, () => {
+          if (this.state.Option2 === false) { displayArrow(); }
+        });
       } else {
-        this.setState( {Option1: true}, () => {
-          if (this.state.Option2 === false)
-            displayArrow();
-        })
+        this.setState({ Option1: true }, () => {
+          if (this.state.Option2 === false) { displayArrow(); }
+        });
       }
       displayProgressBar();
     }
-    if (name === "Option2")
-    {
+    if (name === 'Option2') {
       if (Option2 === true) {
-        this.setState({ Option2: false}, () => {
-          if (this.state.Option1 === false)
-            displayArrow();
-        })
+        this.setState({ Option2: false }, () => {
+          if (this.state.Option1 === false) { displayArrow(); }
+        });
       } else {
-        this.setState( {Option2: true}, () => {
-          if (this.state.Option1 === false)
-            displayArrow();
-        })
+        this.setState({ Option2: true }, () => {
+          if (this.state.Option1 === false) { displayArrow(); }
+        });
       }
       displaySubtasks();
     }
   }
 
   render() {
-    const { affOptionBox, displayOption} = this.props;
+    const { affOptionBox, displayOption } = this.props;
 
     return (
       <div
+        role="menuitem"
         className={displayOption ? 'optionBox show' : 'optionBox hidden'}
         onMouseLeave={affOptionBox}
       >

@@ -32,14 +32,15 @@ class Switcher extends Component {
 
   render() {
     const { value } = this.state;
-    const { name, text } = this.props;
+    const { text } = this.props;
 
     return (
       <div className="switcher">
         <p>{text}:{value ? '  On' : '  Off'}</p>
         <div
           className="switcherInner"
-          onClick={this.handleChangeValue}>
+          onClick={this.handleChangeValue}
+        >
           <div className={value ? 'switcherCursor right' : 'switcherCursor left'} />
         </div>
       </div>

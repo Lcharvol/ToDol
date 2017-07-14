@@ -9,7 +9,7 @@ class ResearchBox extends Component {
   };
 
   state = {
-    value: ''
+    value: '',
   }
 
   handleChangeResearch = ({ target: { value } }) => {
@@ -20,8 +20,6 @@ class ResearchBox extends Component {
   };
 
   render() {
-    const { value } = this.state;
-
     return (
       <div className="ResearchBox">
         <div className="loupeElem">

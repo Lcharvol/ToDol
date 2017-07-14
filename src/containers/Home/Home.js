@@ -63,8 +63,9 @@ class Home extends Component {
         <ResearchBox
           research={this.research}
         />
-        {list.map((li, index) => (
+        {list.map((li) => (
           <Todolist
+            key={li.id}
             remove={this.remove}
             research={research}
             {...li}
