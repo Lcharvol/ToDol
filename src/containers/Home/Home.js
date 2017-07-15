@@ -16,10 +16,6 @@ class Home extends Component {
     research: '',
   };
 
-  componentWillMount = () => {
-
-  }
-
   remove = (index) => {
     const { list } = this.state;
     this.setState({ list: list.filter((li) => li.id !== index) });
@@ -33,8 +29,19 @@ class Home extends Component {
     }
   };
 
+  generateId = () => {
+    const { list } = this.state;
+    let id = 0;
+
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].id >= id) { id = list[i].id + 1; }
+    }
+    return (id);
+  }
+
   publish = (todo, date) => {
     const { list } = this.state;
+    const index = this.generateId();
 
     this.setState({
       list: [{
@@ -42,6 +49,7 @@ class Home extends Component {
         fore: date,
         since: '15/10/2017',
         done: 'no',
+        id: index,
       },
         ...list,
       ],
