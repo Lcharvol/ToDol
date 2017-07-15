@@ -44,6 +44,7 @@ class toDoList extends Component {
   componentDidMount = () => {
     window.addEventListener('mousemove', this.updateProgress, false);
     window.addEventListener('mouseup', this.dragOff, false);
+    window.addEventListener('resize', this.handleChangeMinimize, false);
   }
 
   handletrashfocus = () => {
@@ -128,7 +129,10 @@ class toDoList extends Component {
   }
 
   handleChangeMinimize = () => {
-
+    console.log(window.innerWidth);
+    if (window.innerWidth > 720) { this.setState({ minimize: 0 }); }
+    if (window.innerWidth < 720) { this.setState({ minimize: 1 }); }
+    if (window.innerWidth < 560) { this.setState({ minimize: 2 }); }
   }
 
   render() {
