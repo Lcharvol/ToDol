@@ -5,9 +5,8 @@ import './subtaskslist.css';
 class SubtasksList extends Component {
 
   static propTypes = {
-    task: PropTypes.string.isRequired,
+    task: PropTypes.object.isRequired,
     remove: PropTypes.func.isRequired,
-    index: PropTypes.number.isRequired,
   };
 
   static defaultProps = {
@@ -38,21 +37,21 @@ class SubtasksList extends Component {
 
   render() {
     const { checked, trashfocus } = this.state;
-    const { task, remove, index } = this.props;
+    const { remove, task } = this.props;
 
     return (
       <div className="subtaskslist">
         <div role="checkbox" aria-checked="false" className="checkbox" onClick={this.gocheck}>
           <i className={checked ? 'fa fa-check check' : ''} aria-hidden="true" />
         </div>
-        <p>{task}</p>
+        <p>{task.todo}</p>
         <div className="delete">
           <i
             className={trashfocus ? 'fa fa-trash poubelle' : 'fa fa-trash-o poubelle'}
             aria-hidden="true"
             onMouseEnter={this.handletrashfocus}
             onMouseLeave={this.handletrashfocus}
-            onClick={() => remove(index)}
+            onClick={() => remove(task.id)}
           />
         </div>
       </div>

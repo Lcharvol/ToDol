@@ -17,23 +17,33 @@ class Subtasks extends Component {
     subtasks: [],
   };
 
+  getnewsubtaskid = () => {
+    const { subtasks } = this.state;
+    let id = 0;
+
+    for (let i = 0; i < subtasks.length; i++) {
+      if (subtasks[i].id >= id) { id = subtasks[i].id + 1; }
+    }
+    return (id);
+  }
+
   addnewsubtask = () => {
     const { subtasks } = this.state;
+    const newid = this.getnewsubtaskid();
 
-    this.setState({ subtasks: [{ coucou: 'salut', ...subtasks }, ...subtasks] });
+    this.setState({ subtasks: [{ todo: newid, id: newid }, ...subtasks] });
   }
 
   componentDidMount() {
     const { subtasks } = this.props;
 
     this.setState({ subtasks });
-    console.log(subtasks);
   }
 
   remove = (index) => {
     const { subtasks } = this.state;
 
-    this.setState({ subtasks: subtasks.filter((sub, index) => index !== index) });
+    this.setState({ subtasks: subtasks.filter((sub) => sub.id !== index) });
   }
 
   render() {
@@ -47,12 +57,11 @@ class Subtasks extends Component {
           </div>
           <p>Add a new subtask</p>
         </div>
-        {Object.keys(subtasks).map((task, i) => (
+        {subtasks.map((task) => (
           <SubtasksList
-            key={i}
-            index={i}
-            task={task}
+            key={task.id}
             remove={this.remove}
+            task={task}
           />
         ))}
       </div>

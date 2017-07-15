@@ -50,6 +50,7 @@ class Home extends Component {
         since: '15/10/2017',
         done: 'no',
         id: index,
+        subtasks: [],
       },
         ...list,
       ],
