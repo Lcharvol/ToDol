@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import Subtasks from '../subtasks';
 import Optionbox from '../Optionbox';
+import ProgressBar from '../progressBar';
 import './toDoList.css';
 
 class toDoList extends Component {
@@ -31,8 +32,6 @@ class toDoList extends Component {
     trashfocus: false,
     wrap: false,
     progress: 0,
-    progDrag: false,
-    startDrag: 0,
     optionfocus: false,
     displayOption: false,
     displayProgressBar: false,
@@ -60,28 +59,12 @@ class toDoList extends Component {
     }
   }
 
-  updateProgress = (e) => {
-    if (this.state.progDrag === true) {
-      let percentage = ((e.screenX - (this.state.startDrag)) / 8);
-
-      if (percentage < 0) { percentage = 0; }
-      if (percentage > 100) { percentage = 100; this.setState({ checked: true }); }
-      this.setState({ progress: percentage });
-    }
-  }
-
 
   gocheck = () => {
     if (this.state.checked === false) {
       this.setState({ checked: true });
     } else { this.setState({ checked: false }); }
   };
-
-  dragOn = (e) => {
-    this.setState({ progDrag: true });
-    if (this.state.startDrag === 0) { this.setState({ startDrag: e.screenX }); }
-  }
-  dragOff = () => { this.setState({ progDrag: false }); }
 
   researchMatch = (research, todo) => {
     if (todo.toUpperCase().match(research.toUpperCase())) { return (true); }
@@ -135,16 +118,15 @@ class toDoList extends Component {
     if (window.innerWidth < 560) { this.setState({ minimize: 2 }); }
   }
 
+  handleChangeProgress = (progress) => {
+    this.setState({ progress });
+    if (progress === 100) { this.setState({ checked: true }); }
+  }
+
   render() {
     const { props: { todo, fore, since, id, subtasks, remove, research } } = this;
     const { minimize, checked, trashfocus, wrap, progress, optionfocus, displayOption,
       displayProgressBar, displaySubtasks, displayArrow } = this.state;
-
-    let barStyle = {
-      width: `${progress}%`,
-    };
-
-    if (progress < 3) { barStyle = { width: '3%' }; }
 
     return (
       <div className={this.researchMatch(research, todo) ? 'toDoList' : 'toDoList hiddenlist'}>
@@ -185,22 +167,13 @@ class toDoList extends Component {
             </div>
           </div>
           {displayProgressBar &&
-          <div className="progressElem">
-            <div className="progressBar">
-              <div className="progressBarInner" style={barStyle}>
-                <div
-                  className="cursor"
-                  role="switch"
-                  aria-checked="true"
-                  onMouseDown={this.dragOn}
-                  onMouseUp={this.dragOff}
-                />
-              </div>
-            </div>
-            <p className="progressScore">{Math.round(progress)}%</p>
-          </div>}
+            <ProgressBar
+              handleChangeProgress={this.handleChangeProgress}
+            />
+          }
           {displaySubtasks && <Subtasks
             subtasks={subtasks}
+            updateProgress={this.updateProgress}
           />}
         </div>
         <Optionbox

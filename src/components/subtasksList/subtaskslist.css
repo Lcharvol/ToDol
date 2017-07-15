@@ -1,6 +1,7 @@
 .subtaskslist
 {
   display: flex;
+  align-items: center;
   margin:auto;
   margin-top:10px;
   margin-bottom: 10px;
@@ -19,6 +20,12 @@
 {
   flex:1;
   text-align: right;
-  margin-top:18px;
   margin-right:20px;
+}
+.check2
+{
+  color: rgb(59,210,174);
+  position: absolute;
+  margin-top:6px;
+  margin-left:8px;
 }
