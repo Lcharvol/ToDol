@@ -47,12 +47,6 @@ class toDoList extends Component {
     this.handleChangeMinimize();
   }
 
-  handletrashfocus = () => {
-    if (this.state.trashfocus === false) { this.setState({ trashfocus: true }); } else {
-      this.setState({ trashfocus: false });
-    }
-  };
-
   affmore = () => {
     if (this.state.wrap === false) { this.setState({ wrap: true }); } else {
       this.setState({ wrap: false });
@@ -70,14 +64,6 @@ class toDoList extends Component {
     if (todo.toUpperCase().match(research.toUpperCase())) { return (true); }
 
     return (false);
-  }
-
-  handleChangeOption = () => {
-    if (this.state.optionfocus === false) {
-      this.setState({ optionfocus: true });
-    } else {
-      this.setState({ optionfocus: false });
-    }
   }
 
   affOptionBox = () => {
@@ -112,6 +98,12 @@ class toDoList extends Component {
     }
   }
 
+  handletrashfocus = () => {
+    if (this.state.trashfocus === false) { this.setState({ trashfocus: true }); } else {
+      this.setState({ trashfocus: false });
+    }
+  }
+
   handleChangeMinimize = () => {
     if (window.innerWidth > 735) { this.setState({ minimize: 0 }); }
     if (window.innerWidth < 735) { this.setState({ minimize: 1 }); }
@@ -121,6 +113,14 @@ class toDoList extends Component {
   handleChangeProgress = (progress) => {
     this.setState({ progress });
     if (progress === 100) { this.setState({ checked: true }); }
+  }
+
+  handleChangeOption = () => {
+    if (this.state.optionfocus === false) {
+      this.setState({ optionfocus: true });
+    } else {
+      this.setState({ optionfocus: false });
+    }
   }
 
   render() {
@@ -171,10 +171,12 @@ class toDoList extends Component {
               handleChangeProgress={this.handleChangeProgress}
             />
           }
-          {displaySubtasks && <Subtasks
-            subtasks={subtasks}
-            updateProgress={this.updateProgress}
-          />}
+          {displaySubtasks &&
+            <Subtasks
+              subtasks={subtasks}
+              updateProgress={this.updateProgress}
+            />
+          }
         </div>
         <Optionbox
           affOptionBox={this.affOptionBox}

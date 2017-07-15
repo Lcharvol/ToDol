@@ -68,3 +68,15 @@
   margin-left:7px;
   top:1px;
 }
+
+.letsAddNewSubtask
+{
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.pencil
+{
+  color:rgb(59,210,174);
+}

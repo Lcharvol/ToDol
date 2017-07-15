@@ -2,7 +2,7 @@
 {
   position: absolute;
   top:10px;
-  left:610px;
+  left:calc(100% - 220px);
   width:220px;
   padding-bottom: 12px;
   background-color:white;

@@ -6,7 +6,7 @@ class ProgressBar extends Component {
 
   static PropTypes = {
     progress: PropTypes.number.isRequired,
-    updateProgress: PropTypes.func.isRequired,
+    handleChangeProgress: PropTypes.func.isRequired,
   }
 
   state = {
@@ -16,8 +16,6 @@ class ProgressBar extends Component {
   }
 
   componentDidMount = () => {
-    const { updateProgress } = this.props;
-
     window.addEventListener('mouseup', this.dragOff, false);
   }
 
@@ -25,10 +23,10 @@ class ProgressBar extends Component {
     const { handleChangeProgress } = this.props;
 
     if (this.state.progDrag === true) {
-      let percentage = ((e.screenX - (this.state.startDrag)) / 8);
+      let percentage = ((e.screenX - (this.state.startDrag)) / (window.innerWidth / 150));
 
       if (percentage < 0) { percentage = 0; }
-      if (percentage > 100) { percentage = 100; this.setState({ checked: true }); }
+      if (percentage > 100) { percentage = 100; }
       this.setState({ progress: percentage });
     }
     handleChangeProgress(this.state.progress);
@@ -38,10 +36,11 @@ class ProgressBar extends Component {
     this.setState({ progDrag: true });
     if (this.state.startDrag === 0) { this.setState({ startDrag: e.screenX }); }
   }
+
   dragOff = () => { this.setState({ progDrag: false }); }
 
   render() {
-    const { progDrag, startDrag, progress } = this.state;
+    const { progress } = this.state;
 
     window.addEventListener('mousemove', this.updateProgress, false);
 

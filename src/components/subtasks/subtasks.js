@@ -64,6 +64,12 @@ class Subtasks extends Component {
             task={task}
           />
         ))}
+        {subtasks.length === 0 &&
+          <div className="letsAddNewSubtask">
+            <i className="fa fa-pencil pencil" aria-hidden="true" />
+            <p>Let's add a new subtask</p>
+          </div>
+        }
       </div>
     );
   }
