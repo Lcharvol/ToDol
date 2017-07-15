@@ -10,7 +10,7 @@
   position: relative;
   width:100%;
   max-width:1000px;
-  height:65px;
+  height:64px;
   border-radius: 5px;
   background-color:white;
   margin:auto;
@@ -25,6 +25,21 @@
     0 1em 3em -0.5em rgba(150,150,150,0.1),
     0 3em 3em -0.25em rgba(150,150,150,0.1);
 }
+.toDoListElemInfo
+{
+  display: flex;
+  wrap:wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top:5px;
+}
+
+.pictogrammes
+{
+  display: flex;
+  justify-content: flex-end;
+  flex:1;
+}
 
 .unwraped
 {
@@ -36,28 +51,23 @@
 .to_do
 {
   color: rgb(59,210,174);
-  display: inline-block;
-  width:200px;
-  margin-left: 25px;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+  flex:1;
 }
 .checkbox
 {
-  position: relative;
-  display: inline-block;
   width:30px;
   height:30px;
+  margin-left:15px;
+  margin-right:20px;
   background-color:none;
   border: solid;
   border-width:4px;
   border-color:rgb(59,210,174);
-  top: 14px;
-  margin-left:14px;
-  margin-right:16px;
   border-radius: 5px;
   transition: all 0.5s;
 }
@@ -74,22 +84,20 @@
 
 .since
 {
+  flex:1;
   color: rgb(59,210,174);
-  display: inline-block;
-  width:150px;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+  flex:1;
 }
 
 .fore
 {
+  flex:1;
   color: rgb(59,210,174);
-  display: inline-block;
-  margin-left: 25px;
-  width:150px;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -100,8 +108,8 @@
 {
   color: rgb(59,210,174);
   position: absolute;
-  top:6px;
-  left:7px;
+  top:24px;
+  left:11px;
 }
 .red
 {
@@ -109,36 +117,30 @@
 }
 .delete
 {
-  position: absolute;
-  right:0;
-  top:2px;
-  width:50px;
-  height:60px;
+  margin-left:10px;
+  margin-right:25px;
+}
+.more
+{
+  margin-left:10px;
+  margin-right:10px;
+}
+.option_elem
+{
+  margin-left:10px;
+  margin-right:10px;
 }
 .poubelle
 {
-  position: relative;
   color:rgb(59,210,174);
-  margin-top: 20px;
 }
 .poubelle:hover{
   cursor:pointer;
 }
 
-.more
-{
-  position: absolute;
-  right:100px;
-  top:2px;
-  width:50px;
-  height:60px;
-}
-
 .chev
 {
-  position: relative;
   color:rgb(59,210,174);
-  margin-top: 20px;
 }
 .chev:hover{
   cursor:pointer;
@@ -205,24 +207,15 @@
 {
   display: none;
 }
-.option_elem{
-  position: absolute;
-  right:50px;
-  top:2px;
-  width:50px;
-  height:60px;
-}
 
 .option
 {
   position: relative;
   color:rgb(59,210,174);
-  margin-top: 20px;
 }
 .optionhover
 {
   position: relative;
-  margin-top: 20px;
   cursor: pointer;
   color:rgb(54,186,194);
 }

@@ -38,6 +38,7 @@ class toDoList extends Component {
     displayProgressBar: false,
     displaySubtasks: false,
     displayArrow: false,
+    minimize: 0,
   }
 
   componentDidMount = () => {
@@ -126,9 +127,14 @@ class toDoList extends Component {
     }
   }
 
+  handleChangeMinimize = () => {
+
+  }
+
   render() {
     const { props: { todo, fore, since, id, subtasks, remove, research } } = this;
-    const { checked, trashfocus, wrap, progress, optionfocus, displayOption, displayProgressBar, displaySubtasks, displayArrow } = this.state;
+    const { minimize, checked, trashfocus, wrap, progress, optionfocus, displayOption,
+      displayProgressBar, displaySubtasks, displayArrow } = this.state;
 
     let barStyle = {
       width: `${progress}%`,
@@ -139,36 +145,40 @@ class toDoList extends Component {
     return (
       <div className={this.researchMatch(research, todo) ? 'toDoList' : 'toDoList hiddenlist'}>
         <div className={wrap ? 'toDoListElem unwraped' : 'toDoListElem'}>
-          <div role="checkbox" aria-checked="false" className="checkbox" onClick={this.gocheck}>
-            <i className={checked ? 'fa fa-check check' : ''} aria-hidden="true" />
-          </div>
-          <p className="to_do">{todo}</p>
-          <p className="since">Since: {since}</p>
-          <p className="fore">For: {fore}</p>
-          {displayArrow && <div className="more">
-            <i
-              className={wrap ? 'fa fa-chevron-up chev' : 'fa fa-chevron-down chev'}
-              aria-hidden="true"
-              onClick={this.affmore}
-            />
-          </div>}
-          <div className="option_elem">
-            <i
-              className={optionfocus ? 'fa fa-cog optionhover' : 'fa fa-cog option'}
-              onMouseEnter={this.handleChangeOption}
-              onMouseLeave={this.handleChangeOption}
-              onClick={this.affOptionBox}
-              aria-hidden="true"
-            />
-          </div>
-          <div className="delete">
-            <i
-              className={trashfocus ? 'fa fa-trash poubelle' : 'fa fa-trash-o poubelle'}
-              aria-hidden="true"
-              onMouseEnter={this.handletrashfocus}
-              onMouseLeave={this.handletrashfocus}
-              onClick={() => remove(id)}
-            />
+          <div className="toDoListElemInfo">
+            <div role="checkbox" aria-checked="false" className="checkbox" onClick={this.gocheck}>
+              <i className={checked ? 'fa fa-check check' : ''} aria-hidden="true" />
+            </div>
+            <p className="to_do">{todo}</p>
+            {minimize <= 1 && <p className="since">Since: {since}</p>}
+            {minimize === 0 && <p className="fore">For: {fore}</p>}
+            <div className="pictogrammes">
+              {displayArrow && <div className="more">
+                <i
+                  className={wrap ? 'fa fa-chevron-up chev' : 'fa fa-chevron-down chev'}
+                  aria-hidden="true"
+                  onClick={this.affmore}
+                />
+              </div>}
+              <div className="option_elem">
+                <i
+                  className={optionfocus ? 'fa fa-cog optionhover' : 'fa fa-cog option'}
+                  onMouseEnter={this.handleChangeOption}
+                  onMouseLeave={this.handleChangeOption}
+                  onClick={this.affOptionBox}
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="delete">
+                <i
+                  className={trashfocus ? 'fa fa-trash poubelle' : 'fa fa-trash-o poubelle'}
+                  aria-hidden="true"
+                  onMouseEnter={this.handletrashfocus}
+                  onMouseLeave={this.handletrashfocus}
+                  onClick={() => remove(id)}
+                />
+              </div>
+            </div>
           </div>
           {displayProgressBar &&
           <div className="progressElem">
