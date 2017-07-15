@@ -45,7 +45,7 @@ class SubtasksList extends Component {
           <i className={checked ? 'fa fa-check check' : ''} aria-hidden="true" />
         </div>
         <p>{task.todo}</p>
-        <div className="delete">
+        <div className="del">
           <i
             className={trashfocus ? 'fa fa-trash poubelle' : 'fa fa-trash-o poubelle'}
             aria-hidden="true"

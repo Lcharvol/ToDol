@@ -97,6 +97,7 @@
 .fore
 {
   flex:1;
+  margin-left:20px;
   color: rgb(59,210,174);
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -109,7 +110,7 @@
   color: rgb(59,210,174);
   position: absolute;
   top:24px;
-  left:11px;
+  left:27px;
 }
 .red
 {

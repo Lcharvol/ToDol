@@ -1,7 +1,6 @@
 .subtaskslist
 {
-  position: relative;
-  display: block;
+  display: flex;
   margin:auto;
   margin-top:10px;
   margin-bottom: 10px;
@@ -15,4 +14,11 @@
     0 1em 2em -0.75em rgba(150,150,150,0.1),
     0 1em 3em -10em rgba(150,150,150,0.1),
     0 1em 3em -10.25em rgba(150,150,150,0.1);
+}
+.del
+{
+  flex:1;
+  text-align: right;
+  margin-top:18px;
+  margin-right:20px;
 }
