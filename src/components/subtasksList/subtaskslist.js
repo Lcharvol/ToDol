@@ -6,6 +6,8 @@ class SubtasksList extends Component {
 
   static propTypes = {
     task: PropTypes.string.isRequired,
+    remove: PropTypes.func.isRequired,
+    index: PropTypes.number.isRequired,
   };
 
   static defaultProps = {
@@ -36,7 +38,7 @@ class SubtasksList extends Component {
 
   render() {
     const { checked, trashfocus } = this.state;
-    const { task } = this.props;
+    const { task, remove, index } = this.props;
 
     return (
       <div className="subtaskslist">
@@ -50,7 +52,7 @@ class SubtasksList extends Component {
             aria-hidden="true"
             onMouseEnter={this.handletrashfocus}
             onMouseLeave={this.handletrashfocus}
-            // onClick={() => remove(index)}
+            onClick={() => remove(index)}
           />
         </div>
       </div>

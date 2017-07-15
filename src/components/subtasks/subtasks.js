@@ -6,28 +6,34 @@ import './subtasks.css';
 class Subtasks extends Component {
 
   static propTypes = {
-    subtasks: PropTypes.object.isRequired,
+    subtasks: PropTypes.array.isRequired,
   };
 
   static defaultProps = {
-    subtasks: {
-    },
+    subtasks: [],
   };
 
   state = {
-    subtasks: '',
+    subtasks: [],
   };
 
   addnewsubtask = () => {
     const { subtasks } = this.state;
 
-    this.setState({ subtasks: { coucou: 'salut', ...subtasks } });
+    this.setState({ subtasks: [{ coucou: 'salut', ...subtasks }, ...subtasks] });
   }
 
   componentDidMount() {
     const { subtasks } = this.props;
 
     this.setState({ subtasks });
+    console.log(subtasks);
+  }
+
+  remove = (index) => {
+    const { subtasks } = this.state;
+
+    this.setState({ subtasks: subtasks.filter((sub, index) => index !== index) });
   }
 
   render() {
@@ -46,6 +52,7 @@ class Subtasks extends Component {
             key={i}
             index={i}
             task={task}
+            remove={this.remove}
           />
         ))}
       </div>

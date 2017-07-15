@@ -12,7 +12,7 @@ class toDoList extends Component {
     fore: PropTypes.string.isRequired,
     remove: PropTypes.func.isRequired,
     id: PropTypes.number.isRequired,
-    subtasks: PropTypes.object.isRequired,
+    subtasks: PropTypes.array.isRequired,
     research: PropTypes.string.isRequired,
   };
 
