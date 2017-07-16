@@ -34,7 +34,7 @@ class ResearchBox extends Component {
     window.addEventListener('scroll', this.handleChangePosition, false);
     return (
       <div className={fixed ? 'mainSearchBox fixed' : 'mainSearchBox'}>
-        <div className="ResearchBox">
+        <div className={fixed ? 'ResearchBoxfixed' : 'ResearchBox'}>
           <div className="loupeElem">
             <i className="fa fa-search fa-2x loupe" aria-hidden="true" />
           </div>

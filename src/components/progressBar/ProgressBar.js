@@ -39,6 +39,12 @@ class ProgressBar extends Component {
 
   dragOff = () => { this.setState({ progDrag: false }); }
 
+  setProgressTextColor = () => {
+    const { progress } = this.state;
+
+    return (100 + (Math.round(progress) * 1.4));
+  }
+
   render() {
     const { progress } = this.state;
 
@@ -46,6 +52,10 @@ class ProgressBar extends Component {
 
     let barStyle = {
       width: `${progress}%`,
+    };
+
+    const progressTextStyle = {
+      color: `rgb(${this.setProgressTextColor()}, 92, 67`,
     };
 
     if (progress < 3) { barStyle = { width: '3%' }; }
@@ -63,7 +73,7 @@ class ProgressBar extends Component {
             />
           </div>
         </div>
-        <p className="progressScore">{Math.round(progress)}%</p>
+        <p style={progressTextStyle} className="progressScore">{Math.round(progress)}%</p>
       </div>
     );
   }
