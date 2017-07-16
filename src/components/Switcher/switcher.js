@@ -38,6 +38,8 @@ class Switcher extends Component {
       <div className="switcher">
         <p>{text}:{value ? '  On' : '  Off'}</p>
         <div
+          role="switch"
+          aria-checked="false"
           className="switcherInner"
           onClick={this.handleChangeValue}
         >

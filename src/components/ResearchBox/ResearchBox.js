@@ -10,6 +10,7 @@ class ResearchBox extends Component {
 
   state = {
     value: '',
+    fixed: false,
   }
 
   handleChangeResearch = ({ target: { value } }) => {
@@ -19,20 +20,35 @@ class ResearchBox extends Component {
     research(value);
   };
 
+  handleChangePosition = () => {
+    const { fixed } = this.state;
+    const searchBar = document.getElementsByClassName('mainSearchBox');
+    const topBar = searchBar[0].getBoundingClientRect();
+    if (topBar.top <= 10) { this.setState({ fixed: true }); }
+    if (window.scrollY < 180) { this.setState({ fixed: false }); }
+  }
+
   render() {
+    const { fixed } = this.state;
+
+    window.addEventListener('scroll', this.handleChangePosition, false);
     return (
-      <div className="ResearchBox">
-        <div className="loupeElem">
-          <i className="fa fa-search fa-2x loupe" aria-hidden="true" />
+      <div className={fixed ? 'mainSearchBox fixed' : 'mainSearchBox'}>
+        <div className="ResearchBox">
+          <div className="loupeElem">
+            <i className="fa fa-search fa-2x loupe" aria-hidden="true" />
+          </div>
+          {
+            <input
+              type="search"
+              placeholder="Research.."
+              name="Research"
+              className="ResearchBar"
+              spellCheck="false"
+              onChange={this.handleChangeResearch}
+            />
+          }
         </div>
-        <input
-          type="search"
-          placeholder="Research.."
-          name="Research"
-          className="ResearchBar"
-          spellCheck="false"
-          onChange={this.handleChangeResearch}
-        />
       </div>
     );
   }

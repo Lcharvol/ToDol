@@ -133,7 +133,7 @@
 }
 .poubelle
 {
-  color:rgb(75,86,78);
+  color:rgba(244, 92, 67, 0.8);
 }
 .poubelle:hover{
   cursor:pointer;
@@ -141,7 +141,7 @@
 
 .chev
 {
-  color:rgb(75,86,78);
+  color:rgba(244, 92, 67, 0.8);
 }
 .chev:hover{
   cursor:pointer;
@@ -216,13 +216,13 @@
 .option
 {
   position: relative;
-  color:rgb(75,86,78);
+  color:rgba(244, 92, 67, 0.8);
 }
 .optionhover
 {
   position: relative;
   cursor: pointer;
-  color: rgba(244, 92, 67, 0.8);
+  color: rgba(244, 92, 67, 0.4);
 }
 .checked
 {

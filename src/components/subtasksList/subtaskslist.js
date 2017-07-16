@@ -41,7 +41,7 @@ class SubtasksList extends Component {
 
     return (
       <div className="subtaskslist">
-        <div role="checkbox" aria-checked="false" className="checkbox" onClick={this.gocheck}>
+        <div role="checkbox" aria-checked="false" className={checked ? 'checkbox checked' : 'checkbox'} onClick={this.gocheck}>
           <i className={checked ? 'fa fa-check check2' : ''} aria-hidden="true" />
         </div>
         <p>{task.todo}</p>
