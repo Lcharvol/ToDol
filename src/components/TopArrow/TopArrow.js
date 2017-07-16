@@ -6,23 +6,14 @@ class TopArrow extends Component {
 
   state = {
     focus: false,
-    bot: -60,
-  }
-
-  componentWillMount = () => {
-    this.setState({ bot: 0 });
-  }
-
-  componentDidMount = () => {
-    this.setState({ bot: 25 });
-  }
-
-  componentWillUnmount = () => {
-    this.setState({ bot: -60 });
+    bot: 100,
   }
 
   handleChangeFocus = () => {
+    const { bot } = this.state;
 
+    if (bot === 100) { this.setState({ bot: 110 }); }
+    if (bot === 110) { this.setState({ bot: 100 }); }
   }
 
   goTop = () => {
@@ -31,22 +22,20 @@ class TopArrow extends Component {
 
   render() {
     const { bot } = this.state;
-
     const divStyle = {
-      color: 'rgba(244, 92, 67, 1)',
       bottom: `${bot}px`,
-      animation: 'bottom 1s',
+      transition: 'all 0.3s',
     };
 
     return (
       <div
         className="topArrow"
         style={divStyle}
+        onClick={this.goTop}
         onMouseEnter={this.handleChangeFocus}
         onMouseLeave={this.handleChangeFocus}
-        onClick={this.goTop}
       >
-        <i className="fa fa-chevron-up chevup" aria-hidden="true" />
+        <i className="fa fa-chevron-up topArrow" aria-hidden="true" />
       </div>
     );
   }
