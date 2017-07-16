@@ -24,7 +24,7 @@ class ResearchBox extends Component {
     const { fixed } = this.state;
     const searchBar = document.getElementsByClassName('mainSearchBox');
     const topBar = searchBar[0].getBoundingClientRect();
-    if (topBar.top <= 10) { this.setState({ fixed: true }); }
+    if (window.scrollY >= 180) { this.setState({ fixed: true }); }
     if (window.scrollY < 180) { this.setState({ fixed: false }); }
   }
 

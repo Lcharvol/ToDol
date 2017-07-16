@@ -15,7 +15,7 @@ class Home extends Component {
     list,
     displaybox: false,
     research: '',
-    displayTopArrow: true,
+    displayTopArrow: false,
   };
 
   remove = (index) => {
@@ -76,6 +76,7 @@ class Home extends Component {
     return (
       <div className="homepage">
         <Header />
+        {displayTopArrow && <div className="fakeResearchBox" />}
         <ResearchBox
           research={this.research}
         />
