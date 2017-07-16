@@ -28,8 +28,8 @@
 .addsubtasks
 {
   position: relative;
+  width:90%;
   margin:auto;
-  padding-left:30px;
 }
 
 .addsubtasksbutton
@@ -39,7 +39,6 @@
   border-radius: 5px;
   width:25px;
   height:25px;
-  margin-left:10px;
   transition: all 0.2s;
   background: #EB3349;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */

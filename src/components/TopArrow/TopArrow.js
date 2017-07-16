@@ -17,7 +17,12 @@ class TopArrow extends Component {
   }
 
   goTop = () => {
-    window.scrollTo(0, 0);
+    let i = window.scrollY;
+    const int = setInterval(() => {
+      window.scrollTo(0, i);
+      i -= 20;
+      if (i < 10) clearInterval(int);
+    }, 2);
   }
 
   render() {
