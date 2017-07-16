@@ -5,6 +5,7 @@ import Todolist from '../../components/Todolist';
 import Buttonadd from '../../components/Buttonadd';
 import Addbox from '../../components/AddBox';
 import ResearchBox from '../../components/ResearchBox';
+import TopArrow from '../../components/TopArrow';
 import { list } from '../../Constants';
 import './Home.css';
 
@@ -14,6 +15,7 @@ class Home extends Component {
     list,
     displaybox: false,
     research: '',
+    displayTopArrow: true,
   };
 
   remove = (index) => {
@@ -62,9 +64,15 @@ class Home extends Component {
     this.setState({ research: value });
   }
 
-  render() {
-    const { list, displaybox, research } = this.state;
+  handleDisplayTopArrow = () => {
+    if (window.scrollY < 180) { this.setState({ displayTopArrow: false }); }
+    if (window.scrollY >= 180) { this.setState({ displayTopArrow: true }); }
+  }
 
+  render() {
+    const { list, displaybox, displayTopArrow, research } = this.state;
+
+    window.addEventListener('scroll', this.handleDisplayTopArrow, false);
     return (
       <div className="homepage">
         <Header />
@@ -86,6 +94,7 @@ class Home extends Component {
           affaddbox={this.affaddbox}
           publish={this.publish}
         />}
+        {displayTopArrow && <TopArrow />}
       </div>
     );
   }
