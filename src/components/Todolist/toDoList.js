@@ -132,7 +132,7 @@ class toDoList extends Component {
       <div className={this.researchMatch(research, todo) ? 'toDoList' : 'toDoList hiddenlist'}>
         <div className={wrap ? 'toDoListElem unwraped' : 'toDoListElem'}>
           <div className="toDoListElemInfo">
-            <div role="checkbox" aria-checked="false" className="checkbox" onClick={this.gocheck}>
+            <div role="checkbox" aria-checked="false" className={checked ? 'checkbox checked' : 'checkbox'} onClick={this.gocheck}>
               <i className={checked ? 'fa fa-check check' : ''} aria-hidden="true" />
             </div>
             <p className="to_do">{todo}</p>

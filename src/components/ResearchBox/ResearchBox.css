@@ -33,28 +33,29 @@
 .ResearchBar
 {
   width:calc(100% - 85px);
-  background-color:rgb(250,250,250);
+  background-color:rgb(255,255,255);
   height:46px;
   padding-left: 15px;
+  padding-right: 15px;
   margin-top:10px;
   border:none;
   font-size: 1.6em;
-  color:rgb(59,210,174);
+  color: rgb(75,86,78);
   border-radius: 3px;
   box-shadow: inset 5px 5px 10px 0px rgba(155,155,155,0.2);
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: rgb(75,86,78);
+  color: rgba(75,86,78, 0.8);
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: rgb(75,86,78);
+  color: rgba(75,86,78, 0.8);
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: rgb(75,86,78);
+  color: rgba(75,86,78, 0.8);
 }
 :-moz-placeholder { /* Firefox 18- */
-color: rgb(75,86,78);
+  color: rgba(75,86,78, 0.8);
 }
 
 .ResearchBar:focus{
@@ -68,10 +69,7 @@ color: rgb(75,86,78);
   height:100%;
   width:65px;
   margin-right:10px;
-  background: #EB3349;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background-image: linear-gradient( 0deg, rgba(244, 92, 67, 1) 0%, rgba(235, 51, 73, 0.7) 100%);
   box-shadow:
     inset 0 7em 10em -5em rgba(255,255,255,0.3),
     0 0.3em 0.5em -0.2em rgba(150,150,100,0.1),
