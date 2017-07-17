@@ -9,7 +9,7 @@ class SortBox extends Component {
   }
 
   displaySortTab = () => {
-
+    console.log("coucou");
   }
 
   render() {
@@ -19,14 +19,14 @@ class SortBox extends Component {
       <div className="sortBoxContainer">
         <div className="sortBoxContainerInner">
           <div className="sortBox">
-            <p className="sortBy">Sort by</p>
-            <i className="fa fa-chevron-right chevfilter" aria-hidden="true" onClick={this.displaySortTab}/>
-            <p>date</p>
-            <p>name</p>
+            <div className="sortBoxRightSide">
+              <p className="sortBy">Sort by</p>
+            </div>
+            <div className="chevContainer" onClick={this.displaySortTab}>
+              <i className="fa fa-chevron-right chevfilter" aria-hidden="true" onClick={this.displaySortTab}/>
+            </div>
           </div>
           {!wrap && <div className="sortTab">
-            <p>date</p>
-            <p>name</p>
           </div>}
         </div>
       </div>

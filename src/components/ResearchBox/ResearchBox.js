@@ -33,8 +33,11 @@ class ResearchBox extends Component {
     const menu = document.querySelector('.mainSearchBox');
     const top = menu.getBoundingClientRect().top + this.scrollY();
 
-    if (this.scrollY() > top - 12 && this.state.fixed === false) { this.setState({ fixed: true }); displayFakeResearchBox() }
-    else if (this.scrollY() < 183 && this.state.fixed === true) {this.setState({ fixed: false }); displayFakeResearchBox() }
+    if (this.scrollY() > (top - 15) && this.state.fixed === false) {
+      this.setState({ fixed: true }); displayFakeResearchBox() }
+    else if (top < 195 && this.state.fixed === true) {
+      this.setState({ fixed: false }); displayFakeResearchBox()
+    }
   }
 
   render() {
@@ -43,7 +46,7 @@ class ResearchBox extends Component {
     window.addEventListener('scroll', this.handleChangePosition, false);
     return (
       <div className={fixed ? 'mainSearchBox fixed' : 'mainSearchBox'}>
-        <div className={fixed ? 'ResearchBox' : 'ResearchBox'}>
+        <div className="ResearchBox">
           <div className="loupeElem">
             <i className="fa fa-search fa-2x loupe" aria-hidden="true" />
           </div>

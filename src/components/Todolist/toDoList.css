@@ -16,7 +16,6 @@
   margin:auto;
   margin-top:12px;
   text-align: left;
-  transition: all 1s;
   overflow: hidden;
   box-shadow:
     inset 0 2em 5em -7em rgba(250, 96, 96, 0.4),
@@ -29,9 +28,9 @@
 {
   display: flex;
   wrap:wrap;
+  height:65px;
   justify-content: space-between;
   align-items: center;
-  margin-top:5px;
 }
 
 .pictogrammes
@@ -45,7 +44,6 @@
 {
   height:auto;
   min-height:65px;
-  transition: all 1s;
   padding-bottom: 23px;
 }
 

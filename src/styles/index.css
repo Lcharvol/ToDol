@@ -8,11 +8,10 @@ body {
   padding: 0;
   width:100%;
   padding-bottom: 50px;
-  font-family: sans-serif;
-  background-color:rgb(250,250,250);
+  font-family: sans-serif;;
   font-family: 'Lato', sans-serif;
   color:rgb(25,25,25);
-  background: rgb(233,238,241);
+  background: #f2f2f2;
   text-align: center;
   font-family: 'Cantarell', sans-serif;
 }
