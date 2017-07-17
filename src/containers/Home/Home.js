@@ -72,8 +72,12 @@ class Home extends Component {
   }
 
   displayFakeResearchBox = () => {
-    if (this.state.displayFakeResearchBox == true) { this.setState( {displayFakeResearchBox: false} ) }
-    else { this.setState( {displayFakeResearchBox: true}) }
+    if (this.state.displayFakeResearchBox === true) {
+      this.setState({ displayFakeResearchBox: false })
+    }
+    else {
+      this.setState({ displayFakeResearchBox: true })
+    }
   }
 
   render() {
