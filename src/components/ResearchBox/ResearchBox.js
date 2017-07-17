@@ -20,12 +20,21 @@ class ResearchBox extends Component {
     research(value);
   };
 
+  scrollY = () => {
+    const supportPageOffset = window.pageXOffset !== undefined;
+    const isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+
+    return (supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop);
+  }
+
+
   handleChangePosition = () => {
     const { displayFakeResearchBox } = this.props;
-    const menu = document.querySelector('.mainSearchBox').getBoundingClientRect();
-    console.log(menu.top);
-    if (menu.top < 0) { this.setState({ fixed: true }); displayFakeResearchBox(); }
-    if (window.scrollY <= 194 && this.state.fixed === true) { this.setState({ fixed: false }); displayFakeResearchBox(); }
+    const menu = document.querySelector('.mainSearchBox');
+    const top = menu.getBoundingClientRect().top + this.scrollY();
+
+    if (this.scrollY() > top - 12 && this.state.fixed === false) { this.setState({ fixed: true }); displayFakeResearchBox() }
+    else if (this.scrollY() < 183 && this.state.fixed === true) {this.setState({ fixed: false }); displayFakeResearchBox() }
   }
 
   render() {
@@ -34,7 +43,7 @@ class ResearchBox extends Component {
     window.addEventListener('scroll', this.handleChangePosition, false);
     return (
       <div className={fixed ? 'mainSearchBox fixed' : 'mainSearchBox'}>
-        <div className={fixed ? 'ResearchBoxfixed' : 'ResearchBox'}>
+        <div className={fixed ? 'ResearchBox' : 'ResearchBox'}>
           <div className="loupeElem">
             <i className="fa fa-search fa-2x loupe" aria-hidden="true" />
           </div>
