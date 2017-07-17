@@ -6,14 +6,14 @@ class TopArrow extends Component {
 
   state = {
     focus: false,
-    bot: 100,
+    bot: 80,
   }
 
   handleChangeFocus = () => {
     const { bot } = this.state;
 
-    if (bot === 100) { this.setState({ bot: 110 }); }
-    if (bot === 110) { this.setState({ bot: 100 }); }
+    if (bot === 80) { this.setState({ bot: 90 }); }
+    if (bot === 90) { this.setState({ bot: 80 }); }
   }
 
   goTop = () => {

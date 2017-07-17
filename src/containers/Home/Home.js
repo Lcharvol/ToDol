@@ -5,6 +5,7 @@ import Todolist from '../../components/Todolist';
 import Buttonadd from '../../components/Buttonadd';
 import Addbox from '../../components/AddBox';
 import ResearchBox from '../../components/ResearchBox';
+import SortBox from '../../components/SortBox';
 import TopArrow from '../../components/TopArrow';
 import { list } from '../../Constants';
 import './Home.css';
@@ -16,6 +17,7 @@ class Home extends Component {
     displaybox: false,
     research: '',
     displayTopArrow: false,
+    displayFakeResearchBox: false,
   };
 
   remove = (index) => {
@@ -65,21 +67,28 @@ class Home extends Component {
   }
 
   handleDisplayTopArrow = () => {
-    if (window.scrollY < 180) { this.setState({ displayTopArrow: false }); }
-    if (window.scrollY >= 180) { this.setState({ displayTopArrow: true }); }
+    if (window.scrollY < 194) { this.setState({ displayTopArrow: false }); }
+    if (window.scrollY >= 194) { this.setState({ displayTopArrow: true }); }
+  }
+
+  displayFakeResearchBox = () => {
+    if (this.state.displayFakeResearchBox == true) { this.setState( {displayFakeResearchBox: false} ) }
+    else { this.setState( {displayFakeResearchBox: true}) }
   }
 
   render() {
-    const { list, displaybox, displayTopArrow, research } = this.state;
+    const { list, displaybox, displayTopArrow, research, displayFakeResearchBox } = this.state;
 
     window.addEventListener('scroll', this.handleDisplayTopArrow, false);
     return (
       <div className="homepage">
         <Header />
-        {displayTopArrow && <div className="fakeResearchBox" />}
+        {displayFakeResearchBox && <div className="fakeResearchBox" />}
         <ResearchBox
+          displayFakeResearchBox={this.displayFakeResearchBox}
           research={this.research}
         />
+        <SortBox />
         {list.map((li) => (
           <Todolist
             key={li.id}

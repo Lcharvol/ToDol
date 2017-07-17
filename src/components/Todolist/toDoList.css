@@ -46,6 +46,7 @@
   height:auto;
   min-height:65px;
   transition: all 1s;
+  padding-bottom: 23px;
 }
 
 .to_do

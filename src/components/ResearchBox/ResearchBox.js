@@ -21,11 +21,10 @@ class ResearchBox extends Component {
   };
 
   handleChangePosition = () => {
-    const { fixed } = this.state;
-    const searchBar = document.getElementsByClassName('mainSearchBox');
-    const topBar = searchBar[0].getBoundingClientRect();
-    if (window.scrollY >= 180) { this.setState({ fixed: true }); }
-    if (window.scrollY < 180) { this.setState({ fixed: false }); }
+    const { displayFakeResearchBox } = this.props;
+
+    if (window.scrollY > 194 && this.state.fixed === false) { this.setState({ fixed: true }); displayFakeResearchBox(); }
+    if (window.scrollY <= 194 && this.state.fixed === true) { this.setState({ fixed: false }); displayFakeResearchBox(); }
   }
 
   render() {
