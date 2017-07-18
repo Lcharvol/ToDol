@@ -13,6 +13,7 @@ class toDoList extends Component {
     fore: PropTypes.string.isRequired,
     remove: PropTypes.func.isRequired,
     id: PropTypes.number.isRequired,
+    done: PropTypes.bool.isRequired,
     subtasks: PropTypes.array.isRequired,
     research: PropTypes.string.isRequired,
   };
@@ -22,6 +23,7 @@ class toDoList extends Component {
     since: '00/00/0000',
     fore: '00/00/0000',
     id: 0,
+    done: false,
     research: '',
     subtasks: {
     },
@@ -41,6 +43,10 @@ class toDoList extends Component {
   }
 
   componentDidMount = () => {
+    const { done } = this.props;
+    if (done === true) {
+      this.setState({ checked: true })
+    }
     window.addEventListener('mousemove', this.updateProgress, false);
     window.addEventListener('mouseup', this.dragOff, false);
     window.addEventListener('resize', this.handleChangeMinimize, false);
