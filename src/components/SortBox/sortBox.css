@@ -44,7 +44,6 @@
 .sortBoxContainerInner
 {
   display: flex;
-
   width:90%;
   margin:auto;
   height:65px;
@@ -96,10 +95,5 @@
   justify-content: space-around;
   text-align: center;
   color:white;
-  box-shadow:
-    inset 0 7em 10em -5em rgba(255,255,255,0.4),
-    0 0.3em 0.5em -0.2em rgba(150,150,150,0.1),
-    0 1em 2em -0.75em rgba(150,150,150,0.15),
-    0 1em 3em -0.5em rgba(150,150,150,0.1),
-    0 2em 3em -0.25em rgba(150,150,150,0.2);
+  
 }
