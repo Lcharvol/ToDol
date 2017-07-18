@@ -41,7 +41,7 @@ class ResearchBox extends Component {
   }
 
   handleFocusInput = ({ type }) => {
-    this._input.placeholder = type === 'focus' ? '' : 'Recherche...';
+    this._input.placeholder = type === 'focus' ? '' : 'Research..';
   }
 
   render() {

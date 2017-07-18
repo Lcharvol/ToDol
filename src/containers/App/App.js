@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-import Home from '../../containers/Home';
 import './App.css';
 
-const App = () =>
+const App = ({ children }) =>
 (
   <main>
-    <Home />
+    {children}
   </main>
 );
+
+App.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default App;
