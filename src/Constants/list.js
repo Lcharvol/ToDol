@@ -1,6 +1,6 @@
 const elemtodo = [
   {
-    todo: 'Courses',
+    todo: 'D',
     fore: '15/10/2018',
     since: '03/03/2017',
     done: 'no',
@@ -21,7 +21,7 @@ const elemtodo = [
     ],
   },
   {
-    todo: 'Courses',
+    todo: 'C',
     fore: '15/10/2018',
     since: '03/03/2017',
     done: 'no',
@@ -43,7 +43,7 @@ const elemtodo = [
   },
 
   {
-    todo: 'Courses',
+    todo: 'B',
     fore: '15/10/2018',
     since: '03/03/2017',
     done: 'no',
@@ -64,7 +64,7 @@ const elemtodo = [
     ],
   },
   {
-    todo: 'Courses',
+    todo: 'A',
     fore: '15/10/2018',
     since: '03/03/2017',
     done: 'no',

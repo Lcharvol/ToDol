@@ -80,6 +80,16 @@ class Home extends Component {
     }
   }
 
+  sortBy = () => {
+    let { list } = this.state;
+
+    list.map((li, i) => { console.log(li.todo)})
+    list = list.sort();
+    list.map((li, i) => { console.log(li.todo)});
+    this.setState({ list: list })
+
+  }
+
   render() {
     const { list, displaybox, displayTopArrow, research, displayFakeResearchBox } = this.state;
 
@@ -92,7 +102,9 @@ class Home extends Component {
           displayFakeResearchBox={this.displayFakeResearchBox}
           research={this.research}
         />
-        <SortBox />
+        <SortBox
+          sortBy={this.sortBy}
+        />
         {list.map((li) => (
           <Todolist
             key={li.id}

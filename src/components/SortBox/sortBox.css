@@ -2,7 +2,7 @@
 {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow: hidden;
   height:35px;
   background-color:white;
@@ -15,6 +15,16 @@
   0 1em 2em -0.75em rgba(150,150,150,0.15),
   0 1em 3em -0.5em rgba(150,150,150,0.1),
   0 2em 3em -0.25em rgba(150,150,150,0.2);
+}
+.sortBox p
+{
+  margin-left:10px;
+  margin-right:10px;
+  cursor:pointer;
+}
+.sortBox p:hover
+{
+  color:rgba(244, 92, 67, 1);
 }
 .sortBoxContainer
 {
@@ -52,7 +62,7 @@
   display: flex;
   align-items: center;
   cursor:pointer;
-  width:30px;
+  min-width:30px;
   height:100%;
   text-align: center;
 }

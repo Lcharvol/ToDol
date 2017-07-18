@@ -6,22 +6,38 @@ class SortBox extends Component {
 
   state = {
     wrap: true,
+    textFocus: false,
   }
 
   displaySortTab = () => {
     if (this.state.wrap === true) {
-    this.setState({wrap: false});}
-    else {
-      this.setState({wrap: true});
+      this.setState({ wrap: false });
+    } else {
+      this.setState({ wrap: true });
+    }
+  };
+
+  handleFocusText = () => {
+    const { textFocus } = this.state;
+
+    if (textFocus === false) {
+      this.setState({ textFocus: true })
+    } else {
+      this.setState({ textFocus: false })
     }
   }
 
   render() {
     const { wrap } = this.state;
+    const { sortBy } = this.props;
 
     const divStyle = {
-      width: wrap ? '130px' : '300px',
-    }
+      width: wrap ? '130px' : '330px',
+    };
+
+    const textStyle = {
+      color: this.state.textFocus ? 'red' : 'yellow',
+    };
 
     return (
       <div className="sortBoxContainer">
@@ -31,12 +47,11 @@ class SortBox extends Component {
               <p className="sortBy">Sort by</p>
             </div>
             <div className="chevContainer" onClick={this.displaySortTab}>
-              <i className="fa fa-chevron-right chevfilter" aria-hidden="true" onClick={this.displaySortTab}/>
+              <i className="fa fa-chevron-right chevfilter" aria-hidden="true" />
             </div>
-            {!wrap &&
-              <div className="sortTab">
-              </div>
-            }
+            <p onClick={sortBy}>Date</p>
+            <p onClick={sortBy}>Name</p>
+            <p onClick={sortBy}>Status</p>
           </div>
         </div>
       </div>
