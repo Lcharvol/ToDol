@@ -1,8 +1,8 @@
 const elemtodo = [
   {
     todo: 'D',
-    fore: '15/10/2018',
-    since: '03/03/2017',
+    fore: '15/10/2017',
+    since: '03/04/2017',
     done: 'no',
     id: 0,
     subtasks: [
@@ -22,7 +22,7 @@ const elemtodo = [
   },
   {
     todo: 'C',
-    fore: '15/10/2018',
+    fore: '13/10/2018',
     since: '03/03/2017',
     done: 'no',
     id: 1,
@@ -44,7 +44,7 @@ const elemtodo = [
 
   {
     todo: 'B',
-    fore: '15/10/2018',
+    fore: '16/10/2019',
     since: '03/03/2017',
     done: 'no',
     id: 2,
@@ -65,7 +65,7 @@ const elemtodo = [
   },
   {
     todo: 'A',
-    fore: '15/10/2018',
+    fore: '11/10/2018',
     since: '03/03/2017',
     done: 'no',
     id: 3,
@@ -87,7 +87,7 @@ const elemtodo = [
 
   {
     todo: 'Courses',
-    fore: '15/10/2018',
+    fore: '18/10/2018',
     since: '03/03/2017',
     done: 'no',
     id: 4,
@@ -108,7 +108,7 @@ const elemtodo = [
   },
   {
     todo: 'Courses',
-    fore: '15/10/2018',
+    fore: '19/10/2018',
     since: '03/03/2017',
     done: 'no',
     id: 5,
@@ -151,8 +151,8 @@ const elemtodo = [
   },
   {
     todo: 'Courses',
-    fore: '15/10/2018',
-    since: '03/03/2017',
+    fore: '09/10/2018',
+    since: '03/02/2017',
     done: 'no',
     id: 7,
     subtasks: [

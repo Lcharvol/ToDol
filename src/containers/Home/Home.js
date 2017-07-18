@@ -18,6 +18,7 @@ class Home extends Component {
     research: '',
     displayTopArrow: false,
     displayFakeResearchBox: false,
+    sortBy: 'none',
   };
 
   remove = (index) => {
@@ -74,19 +75,51 @@ class Home extends Component {
   displayFakeResearchBox = () => {
     if (this.state.displayFakeResearchBox === true) {
       this.setState({ displayFakeResearchBox: false })
-    }
-    else {
+    } else {
       this.setState({ displayFakeResearchBox: true })
     }
   }
 
-  sortBy = () => {
-    let { list } = this.state;
+  sortByName = (a, b) => {
+    this.setState({ sortBy: 'name' })
+    if (a.todo < b.todo) {
+      return (-1);
+    }
+    return (1);
+  }
 
-    list.map((li, i) => { console.log(li.todo)})
-    list = list.sort();
-    list.map((li, i) => { console.log(li.todo)});
-    this.setState({ list: list })
+  sortByFor = (a, b) => {
+    const yearA = a.fore.substring(6,10);
+    const monthA = a.fore.substring(3,5);
+    const dayA = a.fore.substring(0,2);
+    const yearB = b.fore.substring(6,10);
+    const monthB = b.fore.substring(3,5);
+    const dayB = b.fore.substring(0,2);
+
+    this.setState({ sortBy: 'for' })
+    if (yearA < yearB) {
+      return (-1);
+    }
+    return (1);
+  }
+
+
+  sortBySince = (a, b) => {
+    this.setState({ sortBy: 'since' })
+  }
+
+  sortBy = (by) => {
+    let { list } = this.state;
+    const { sortBy } = this.state;
+
+    if (by === 1 && sortBy !== 'name') {
+      list = list.sort(this.sortByName);
+    } else if (by === 2 && sortBy !== 'for') {
+      list = list.sort(this.sortByFor);
+    } else if (by === 3 && sortBy !== 'since') {
+      list = list.sort(this.sortBySince);
+    }
+    this.setState({ list })
 
   }
 

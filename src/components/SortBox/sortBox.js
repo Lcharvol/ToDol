@@ -49,9 +49,9 @@ class SortBox extends Component {
             <div className="chevContainer" onClick={this.displaySortTab}>
               <i className="fa fa-chevron-right chevfilter" aria-hidden="true" />
             </div>
-            <p onClick={sortBy}>Date</p>
-            <p onClick={sortBy}>Name</p>
-            <p onClick={sortBy}>Status</p>
+            <p onClick={() => sortBy(1)}>Name</p>
+            <p onClick={() => sortBy(2)}>For</p>
+            <p onClick={() => sortBy(3)}>Since</p>
           </div>
         </div>
       </div>
