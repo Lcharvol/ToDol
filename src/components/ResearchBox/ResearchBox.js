@@ -40,6 +40,10 @@ class ResearchBox extends Component {
     }
   }
 
+  handleFocusInput = ({ type }) => {
+    this._input.placeholder = type === 'focus' ? '' : 'Recherche...';
+  }
+
   render() {
     const { fixed } = this.state;
 
@@ -57,6 +61,9 @@ class ResearchBox extends Component {
               name="Research"
               className="ResearchBar"
               spellCheck="false"
+              ref={t => this._input = t}
+              onFocus={this.handleFocusInput}
+              onBlur={this.handleFocusInput}
               onChange={this.handleChangeResearch}
             />
           }
