@@ -19,6 +19,14 @@ class SubtasksList extends Component {
     trashfocus: false,
   }
 
+  componentWillMount = () => {
+    const { task } = this.props;
+
+    if (task.done === true) {
+      this.setState({ checked: true })
+    }
+  }
+
   gocheck = () => {
     if (this.state.checked === false) {
       this.setState({ checked: true });

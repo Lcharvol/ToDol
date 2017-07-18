@@ -15,6 +15,7 @@ class Subtasks extends Component {
 
   state = {
     subtasks: [],
+    value: '',
   };
 
   getnewsubtaskid = () => {
@@ -27,14 +28,15 @@ class Subtasks extends Component {
     return (id);
   }
 
-  addnewsubtask = () => {
+  addnewsubtask = (value) => {
+    if (value === '') { return; }
     const { subtasks } = this.state;
     const newid = this.getnewsubtaskid();
 
-    this.setState({ subtasks: [{ todo: newid, id: newid }, ...subtasks] });
+    this.setState({ subtasks: [{ todo: value, id: newid }, ...subtasks], value: '' });
   }
 
-  componentDidMount() {
+  componentWillMount = () => {
     const { subtasks } = this.props;
 
     this.setState({ subtasks });
@@ -46,16 +48,21 @@ class Subtasks extends Component {
     this.setState({ subtasks: subtasks.filter((sub) => sub.id !== index) });
   }
 
+  handleChangeValue = ({ target: { value } }) => {
+    this.setState({ value });
+  }
+
   render() {
-    const { subtasks } = this.state;
+    const { subtasks, value } = this.state;
 
     return (
       <div className="subtasks_main">
         <div className="addsubtasks">
-          <div className="addsubtasksbutton" onClick={this.addnewsubtask}>
+          <div className="addsubtasksbutton" onClick={() => this.addnewsubtask(value)}>
             <i className="fa fa-plus plustask" aria-hidden="true" />
           </div>
-          <p>Add a new subtask</p>
+          <p>Add a new subtask: </p>
+          <input spellCheck="false" value={value} onChange={this.handleChangeValue} className="newSubtaskInput" />
         </div>
         {subtasks.map((task) => (
           <SubtasksList

@@ -78,3 +78,15 @@
 {
   color:#F45C43;
 }
+.newSubtaskInput
+{
+  border:none;
+  color: rgb(75,86,78);
+  height:18px;
+  font-size:0.8em;
+  padding-left:5px;
+}
+.newSubtaskInput:focus
+{
+  outline:none;
+}
