@@ -99,18 +99,48 @@ class Home extends Component {
     this.setState({ sortBy: 'for' })
     if (yearA < yearB) {
       return (-1);
+    } else if (yearA > yearB) {
+      return (1);
+    }
+    if (monthA < monthB) {
+      return (-1);
+    } else if (monthA > monthB) {
+      return (1);
+    }
+    if (dayA < dayB) {
+      return (-1);
+    } else if (monthA > monthB) {
+      return (1);
     }
     return (1);
   }
 
 
   sortBySince = (a, b) => {
-    this.setState({ sortBy: 'since' })
-  }
+    const yearA = a.since.substring(6,10);
+    const monthA = a.since.substring(3,5);
+    const dayA = a.since.substring(0,2);
+    const yearB = b.since.substring(6,10);
+    const monthB = b.since.substring(3,5);
+    const dayB = b.since.substring(0,2);
 
-  sortByNone = () => {
-    this.setState({ list })
-    this.setState({ sortBy: 'none' })
+    this.setState({ sortBy: 'since' })
+    if (yearA < yearB) {
+      return (-1);
+    } else if (yearA > yearB) {
+      return (1);
+    }
+    if (monthA < monthB) {
+      return (-1);
+    } else if (monthA > monthB) {
+      return (1);
+    }
+    if (dayA < dayB) {
+      return (-1);
+    } else if (monthA > monthB) {
+      return (1);
+    }
+    return (1);
   }
 
   sortBy = (by) => {
@@ -123,8 +153,6 @@ class Home extends Component {
       list = list.sort(this.sortByFor);
     } else if (by === 3 && sortBy !== 'since') {
       list = list.sort(this.sortBySince);
-    } else if (by === 4 && sortBy !== 'none') {
-      list = list.sort(this.sortByNone);
     }
     this.setState({ list })
   }

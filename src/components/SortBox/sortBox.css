@@ -16,20 +16,21 @@
   0 1em 3em -0.5em rgba(150,150,150,0.1),
   0 2em 3em -0.25em rgba(150,150,150,0.2);
 }
-.sortBox p
+.sortType
 {
   margin-left:7px;
   margin-right:7px;
   cursor:pointer;
 }
+.sortType:hover
+{
+  margin-top:13px;
+  color:rgba(244, 92, 67, 1);
+}
 .refresh
 {
   margin-left:12px;
   cursor:pointer;
-}
-.sortBox p:hover
-{
-  color:rgba(244, 92, 67, 1);
 }
 .sortBoxContainer
 {
