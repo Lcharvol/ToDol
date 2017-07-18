@@ -108,6 +108,11 @@ class Home extends Component {
     this.setState({ sortBy: 'since' })
   }
 
+  sortByNone = () => {
+    this.setState({ list })
+    this.setState({ sortBy: 'none' })
+  }
+
   sortBy = (by) => {
     let { list } = this.state;
     const { sortBy } = this.state;
@@ -118,9 +123,10 @@ class Home extends Component {
       list = list.sort(this.sortByFor);
     } else if (by === 3 && sortBy !== 'since') {
       list = list.sort(this.sortBySince);
+    } else if (by === 4 && sortBy !== 'none') {
+      list = list.sort(this.sortByNone);
     }
     this.setState({ list })
-
   }
 
   render() {

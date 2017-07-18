@@ -6,7 +6,7 @@ class SortBox extends Component {
 
   state = {
     wrap: true,
-    textFocus: false,
+    textFocus: 0,
   }
 
   displaySortTab = () => {
@@ -27,16 +27,21 @@ class SortBox extends Component {
     }
   }
 
-  render() {
-    const { wrap } = this.state;
+  onclick = (from) => {
     const { sortBy } = this.props;
+    this.setState({ textFocus: from});
+    sortBy(from);
+  }
+
+  render() {
+    const { wrap, textFocus } = this.state;
 
     const divStyle = {
       width: wrap ? '130px' : '330px',
     };
 
     const textStyle = {
-      color: this.state.textFocus ? 'red' : 'yellow',
+      color: 'red',
     };
 
     return (
@@ -49,9 +54,10 @@ class SortBox extends Component {
             <div className="chevContainer" onClick={this.displaySortTab}>
               <i className="fa fa-chevron-right chevfilter" aria-hidden="true" />
             </div>
-            <p onClick={() => sortBy(1)}>Name</p>
-            <p onClick={() => sortBy(2)}>For</p>
-            <p onClick={() => sortBy(3)}>Since</p>
+            <p style={{color: textFocus === 1 ? 'rgba(244, 92, 67, 1)' : 'rgb(85,96,78)'}} onClick={() => this.onclick(1)}>Name</p>
+            <p style={{color: textFocus === 2 ? 'rgba(244, 92, 67, 1)' : 'rgb(85,96,78)'}} onClick={() => this.onclick(2)}>For</p>
+            <p style={{color: textFocus === 3 ? 'rgba(244, 92, 67, 1)' : 'rgb(85,96,78)'}} onClick={() => this.onclick(3)}>Since</p>
+            <i className="fa fa-refresh refresh" aria-hidden="true" style={{color: textFocus === 4 ? 'rgba(244, 92, 67, 1)' : 'rgb(85,96,78)'}} onClick={() => this.onclick(4)}></i>
           </div>
         </div>
       </div>

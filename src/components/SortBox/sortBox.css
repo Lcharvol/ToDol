@@ -7,7 +7,7 @@
   height:35px;
   background-color:white;
   margin-top:15px;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px;
   transition: all 0.2s ease-in;
   box-shadow:
   inset 0 7em 10em -5em rgba(255,255,255,0.4),
@@ -18,8 +18,13 @@
 }
 .sortBox p
 {
-  margin-left:10px;
-  margin-right:10px;
+  margin-left:7px;
+  margin-right:7px;
+  cursor:pointer;
+}
+.refresh
+{
+  margin-left:12px;
   cursor:pointer;
 }
 .sortBox p:hover
