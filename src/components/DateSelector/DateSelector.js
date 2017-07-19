@@ -11,6 +11,8 @@ class DateSelector extends Component {
 
   handleChangeDate = (id) => {
     let { day, month, year } = this.state;
+    const { handleChangeDate } = this.props;
+
     if (id === 1) {
       day += 10;
       if (day > 30) {
@@ -35,15 +37,43 @@ class DateSelector extends Component {
         month = 0;
         year += 1;
       }
+    } else if (id === 5) {
+      year += 1000;
+      if (year > 9999) {
+        day = 0;
+        month = 0;
+        year = 0;
+      }
+    } else if (id === 6) {
+      year += 100;
+      if (year > 9999) {
+        day = 0;
+        month = 0;
+        year = 0;
+      }
+    } else if (id === 7) {
+      year += 10;
+      if (year > 9999) {
+        day = 0;
+        month = 0;
+        year = 0;
+      }
+    } else if (id === 8) {
+      year += 1;
+      if (year > 9999) {
+        day = 0;
+        month = 0;
+        year = 0;
+      }
     }
-    this.setState({ day, month, year});
+    this.setState({ day, month, year}, () => handleChangeDate(day, month, year));
   }
 
   render () {
     const { day, month, year } = this.state;
 
     return (
-      <div className="DateSelectorContainer">
+       <div className="DateSelectorContainer">
         <div onClick={() => this.handleChangeDate(1)} className="selector">
           <p>{Math.floor(day / 10)}</p>
         </div>

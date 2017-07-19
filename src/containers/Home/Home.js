@@ -48,6 +48,7 @@ class Home extends Component {
     const { list } = this.state;
     const index = this.generateId();
 
+    console.log(date);
     this.setState({
       list: [{
         todo,
@@ -55,6 +56,7 @@ class Home extends Component {
         since: '15/10/2017',
         done: 'no',
         id: index,
+        done: false,
         subtasks: [],
       },
         ...list,

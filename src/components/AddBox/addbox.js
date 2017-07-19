@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import './addbox.css';
 
+import DateSelector from '../DateSelector';
 
 class Addbox extends Component {
 
@@ -13,21 +14,22 @@ class Addbox extends Component {
 
   state = {
     value: '',
-    date: '00/00/0000',
+    date: '20/04/2017',
   };
 
   handleChangeValue = ({ target: { value } }) => {
     this.setState({ value });
   };
 
-  handleChangeDate = ({ target: { date } }) => {
-    // this.setState({ value });
+  handleChangeDate = (day, month, year) => {
+    this.setState({ date: `${day}/${month}/${year}`});
   };
 
-  handleSubmit = ({ target: { date } }) => {
-    const { value } = this.state;
+  handleSubmit = () => {
+    const { value, date } = this.state;
     const { publish } = this.props;
 
+    console.log(date);
     if (value.length) {
       publish(value, date);
       this.setState({ value: '', date: '00/00/000' });
@@ -51,9 +53,8 @@ class Addbox extends Component {
             onChange={this.handleChangeValue}
           />
           <p className="formtext">For: </p>
-          <input
-            type="date"
-            name="for"
+          <DateSelector
+            handleChangeDate={this.handleChangeDate}
           />
           <p>Use a progress bar?</p>
           <input type="checkbox" id="cbox1" value="checkbox1"/>
