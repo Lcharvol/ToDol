@@ -91,12 +91,12 @@ class Home extends Component {
   }
 
   sortByFor = (a, b) => {
-    const yearA = a.fore.substring(6,10);
-    const monthA = a.fore.substring(3,5);
-    const dayA = a.fore.substring(0,2);
-    const yearB = b.fore.substring(6,10);
-    const monthB = b.fore.substring(3,5);
-    const dayB = b.fore.substring(0,2);
+    const yearA = a.fore.substring(6, 10);
+    const monthA = a.fore.substring(3, 5);
+    const dayA = a.fore.substring(0, 2);
+    const yearB = b.fore.substring(6, 10);
+    const monthB = b.fore.substring(3, 5);
+    const dayB = b.fore.substring(0, 2);
 
     this.setState({ sortBy: 'for' })
     if (yearA < yearB) {
@@ -119,12 +119,12 @@ class Home extends Component {
 
 
   sortBySince = (a, b) => {
-    const yearA = a.since.substring(6,10);
-    const monthA = a.since.substring(3,5);
-    const dayA = a.since.substring(0,2);
-    const yearB = b.since.substring(6,10);
-    const monthB = b.since.substring(3,5);
-    const dayB = b.since.substring(0,2);
+    const yearA = a.since.substring(6, 10);
+    const monthA = a.since.substring(3, 5);
+    const dayA = a.since.substring(0, 2);
+    const yearB = b.since.substring(6, 10);
+    const monthB = b.since.substring(3, 5);
+    const dayB = b.since.substring(0, 2);
 
     this.setState({ sortBy: 'since' })
     if (yearA < yearB) {

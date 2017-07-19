@@ -1,8 +1,8 @@
 const elemtodo = [
   {
     "todo": "Impots",
-    "fore": "24-09-2017",
-    "since": "08-05-2016",
+    "fore": "24/09/2017",
+    "since": "08/05/2016",
     "done": true,
     "id": 0,
     "subtasks": [
@@ -25,8 +25,8 @@ const elemtodo = [
   },
   {
     "todo": "Course",
-    "fore": "08-09-2017",
-    "since": "06-02-2016",
+    "fore": "08/09/2017",
+    "since": "06/02/2016",
     "done": true,
     "id": 1,
     "subtasks": [
@@ -49,8 +49,8 @@ const elemtodo = [
   },
   {
     "todo": "Impots",
-    "fore": "03-11-2017",
-    "since": "02-04-2015",
+    "fore": "03/11/2017",
+    "since": "02/04/2015",
     "done": false,
     "id": 2,
     "subtasks": [
@@ -73,8 +73,8 @@ const elemtodo = [
   },
   {
     "todo": "Stage",
-    "fore": "26-12-2017",
-    "since": "29-05-2017",
+    "fore": "26/12/2017",
+    "since": "29/05/2017",
     "done": true,
     "id": 3,
     "subtasks": [
@@ -97,8 +97,8 @@ const elemtodo = [
   },
   {
     "todo": "Impots",
-    "fore": "10-10-2017",
-    "since": "21-09-2017",
+    "fore": "10/10/2017",
+    "since": "21/09/2017",
     "done": true,
     "id": 4,
     "subtasks": [
@@ -121,8 +121,8 @@ const elemtodo = [
   },
   {
     "todo": "Course",
-    "fore": "06-09-2017",
-    "since": "16-11-2016",
+    "fore": "06/09/2017",
+    "since": "16/11/2016",
     "done": false,
     "id": 5,
     "subtasks": [
@@ -145,8 +145,8 @@ const elemtodo = [
   },
   {
     "todo": "Factures",
-    "fore": "25-07-2017",
-    "since": "30-09-2014",
+    "fore": "25/07/2017",
+    "since": "30/09/2014",
     "done": false,
     "id": 6,
     "subtasks": [
@@ -169,8 +169,8 @@ const elemtodo = [
   },
   {
     "todo": "Factures",
-    "fore": "12-12-2017",
-    "since": "14-07-2017",
+    "fore": "12/12/2017",
+    "since": "14/07/2017",
     "done": false,
     "id": 7,
     "subtasks": [
@@ -193,8 +193,8 @@ const elemtodo = [
   },
   {
     "todo": "Course",
-    "fore": "03-09-2017",
-    "since": "31-03-2016",
+    "fore": "03/09/2017",
+    "since": "31/03/2016",
     "done": false,
     "id": 8,
     "subtasks": [
@@ -217,8 +217,8 @@ const elemtodo = [
   },
   {
     "todo": "Impots",
-    "fore": "29-10-2017",
-    "since": "06-05-2017",
+    "fore": "29/10/2017",
+    "since": "06/05/2017",
     "done": true,
     "id": 9,
     "subtasks": [
@@ -241,8 +241,8 @@ const elemtodo = [
   },
   {
     "todo": "Stage",
-    "fore": "04-08-2017",
-    "since": "22-01-2015",
+    "fore": "04/08/2017",
+    "since": "22/01/2015",
     "done": false,
     "id": 10,
     "subtasks": [
@@ -265,8 +265,8 @@ const elemtodo = [
   },
   {
     "todo": "Course",
-    "fore": "14-08-2017",
-    "since": "20-12-2015",
+    "fore": "14/08/2017",
+    "since": "20/12/2015",
     "done": true,
     "id": 11,
     "subtasks": [
@@ -289,8 +289,8 @@ const elemtodo = [
   },
   {
     "todo": "Course",
-    "fore": "08-12-2017",
-    "since": "19-10-2015",
+    "fore": "08/12/2017",
+    "since": "19/10/2015",
     "done": true,
     "id": 12,
     "subtasks": [
@@ -313,8 +313,8 @@ const elemtodo = [
   },
   {
     "todo": "Stage",
-    "fore": "13-09-2017",
-    "since": "29-05-2015",
+    "fore": "13/09/2017",
+    "since": "29/05/2015",
     "done": true,
     "id": 13,
     "subtasks": [
@@ -337,8 +337,8 @@ const elemtodo = [
   },
   {
     "todo": "Course",
-    "fore": "27-07-2017",
-    "since": "16-05-2017",
+    "fore": "27/07/2017",
+    "since": "16/05/2017",
     "done": false,
     "id": 14,
     "subtasks": [
@@ -361,8 +361,8 @@ const elemtodo = [
   },
   {
     "todo": "Impots",
-    "fore": "09-11-2017",
-    "since": "23-02-2015",
+    "fore": "09/11/2017",
+    "since": "23/02/2015",
     "done": false,
     "id": 15,
     "subtasks": [
@@ -385,8 +385,8 @@ const elemtodo = [
   },
   {
     "todo": "Factures",
-    "fore": "31-07-2017",
-    "since": "28-03-2017",
+    "fore": "31/07/2017",
+    "since": "28/03/2017",
     "done": true,
     "id": 16,
     "subtasks": [
@@ -409,8 +409,8 @@ const elemtodo = [
   },
   {
     "todo": "Impots",
-    "fore": "12-10-2017",
-    "since": "03-01-2015",
+    "fore": "12/10/2017",
+    "since": "03/01/2015",
     "done": false,
     "id": 17,
     "subtasks": [
@@ -433,8 +433,8 @@ const elemtodo = [
   },
   {
     "todo": "Stage",
-    "fore": "25-12-2017",
-    "since": "07-12-2015",
+    "fore": "25/12/2017",
+    "since": "07/12/2015",
     "done": true,
     "id": 18,
     "subtasks": [
@@ -457,8 +457,8 @@ const elemtodo = [
   },
   {
     "todo": "Course",
-    "fore": "24-12-2017",
-    "since": "20-10-2016",
+    "fore": "24/12/2017",
+    "since": "20/10/2016",
     "done": true,
     "id": 19,
     "subtasks": [
@@ -481,8 +481,8 @@ const elemtodo = [
   },
   {
     "todo": "Course",
-    "fore": "04-09-2017",
-    "since": "24-05-2015",
+    "fore": "04/09/2017",
+    "since": "24/05/2015",
     "done": false,
     "id": 20,
     "subtasks": [
@@ -505,8 +505,8 @@ const elemtodo = [
   },
   {
     "todo": "Impots",
-    "fore": "09-10-2017",
-    "since": "18-06-2017",
+    "fore": "09/10/2017",
+    "since": "18/06/2017",
     "done": true,
     "id": 21,
     "subtasks": [
@@ -529,8 +529,8 @@ const elemtodo = [
   },
   {
     "todo": "Stage",
-    "fore": "18-11-2017",
-    "since": "04-06-2016",
+    "fore": "18/11/2017",
+    "since": "04/06/2016",
     "done": true,
     "id": 22,
     "subtasks": [
@@ -553,8 +553,8 @@ const elemtodo = [
   },
   {
     "todo": "Impots",
-    "fore": "02-08-2017",
-    "since": "11-04-2017",
+    "fore": "02/08/2017",
+    "since": "11/04/2017",
     "done": false,
     "id": 23,
     "subtasks": [
@@ -577,8 +577,8 @@ const elemtodo = [
   },
   {
     "todo": "Stage",
-    "fore": "02-08-2017",
-    "since": "15-10-2016",
+    "fore": "02/08/2017",
+    "since": "15/10/2016",
     "done": false,
     "id": 24,
     "subtasks": [

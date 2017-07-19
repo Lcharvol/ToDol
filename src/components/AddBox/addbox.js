@@ -89,15 +89,19 @@ class Addbox extends Component {
           <DateSelector
             handleChangeDate={this.handleChangeDate}
           />
-          <p>Use a progress bar?</p>
-          <div className="squaredOne" onClick={this.handleCheckProgressBar}>
-            <input type="checkbox" value="None" name="check" />
-            <label style={button1Style} htmlFor="squaredOne" />
+          <div className="addboxOptionContainer">
+            <p>Use a progress bar?</p>
+            <div className="squaredOne" onClick={this.handleCheckProgressBar}>
+              <input type="checkbox" value="None" name="check" />
+              <label style={button1Style} htmlFor="squaredOne" />
+            </div>
           </div>
-          <p>Use subtasks?</p>
-          <div className="squaredOne" onClick={this.handleCheckSubtasks}>
-            <input type="checkbox" value="None" name="check" />
-            <label style={button2Style} htmlFor="squaredOne" />
+          <div className="addboxOptionContainer">
+            <p>Use subtasks?</p>
+            <div className="squaredOne" onClick={this.handleCheckSubtasks}>
+              <input type="checkbox" value="None" name="check" />
+              <label style={button2Style} htmlFor="squaredOne" />
+            </div>
           </div>
           <button
             type="button"
