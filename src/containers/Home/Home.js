@@ -7,6 +7,7 @@ import Addbox from '../../components/AddBox';
 import ResearchBox from '../../components/ResearchBox';
 import SortBox from '../../components/SortBox';
 import TopArrow from '../../components/TopArrow';
+import Time from 'react-time-format';
 import { list } from '../../Constants';
 import './Home.css';
 
@@ -38,7 +39,7 @@ class Home extends Component {
     const { list } = this.state;
     let id = 0;
 
-    for (let i = 0; i < list.length; i++) {
+    for (let i = 0; i < list.length; i += 1) {
       if (list[i].id >= id) { id = list[i].id + 1; }
     }
     return (id);
@@ -47,14 +48,13 @@ class Home extends Component {
   publish = (todo, date) => {
     const { list } = this.state;
     const index = this.generateId();
+    const now = new Date();
 
-    console.log(date);
     this.setState({
       list: [{
         todo,
         fore: date,
-        since: '15/10/2017',
-        done: 'no',
+        since: <Time value={now} format="DD/MM/YYYY" />,
         id: index,
         done: false,
         subtasks: [],
