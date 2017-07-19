@@ -12,7 +12,7 @@ class DateSelector extends Component {
 
   componentDidMount = () => {
     const now = new Date();
-    
+
     this.setState({ day: now.getDate(), month: now.getMonth() + 1, year: now.getFullYear() });
   }
 
@@ -73,7 +73,7 @@ class DateSelector extends Component {
         year = 0;
       }
     }
-    this.setState({ day, month, year}, () => handleChangeDate(day, month, year));
+    this.setState({ day, month, year }, () => handleChangeDate(day, month, year));
   }
 
   render () {

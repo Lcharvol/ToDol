@@ -16,6 +16,8 @@ class Addbox extends Component {
   state = {
     value: '',
     date: '00/00/0000',
+    progressBar: false,
+    subtasks: false,
   };
 
   handleChangeValue = ({ target: { value } }) => {
@@ -30,16 +32,46 @@ class Addbox extends Component {
     const { value, date } = this.state;
     const { publish } = this.props;
 
-    console.log(date);
     if (value.length) {
       publish(value, date);
       this.setState({ value: '', date: '00/00/000' });
     }
   }
 
+  handleCheckProgressBar = () => {
+    const { progressBar } = this.state;
+
+    if (progressBar === false) {
+      this.setState({ progressBar: true })
+    } else {
+      this.setState({ progressBar: false })
+    }
+  }
+
+  handleCheckSubtasks = () => {
+    const { subtasks } = this.state;
+
+    if (subtasks === false) {
+      this.setState({ subtasks: true })
+    } else {
+      this.setState({ subtasks: false })
+    }
+  }
+
+
   render() {
     const { affaddbox } = this.props;
-    const { value } = this.state;
+    const { value, progressBar, subtasks } = this.state;
+
+    const button1Style = {
+      background: progressBar ? 'linear-gradient( 0deg, rgba(244, 92, 67, 1) 0%, rgba(235, 51, 73, 1) 100%)'
+      : 'white',
+    }
+
+    const button2Style = {
+      background: subtasks ? 'linear-gradient( 0deg, rgba(244, 92, 67, 1) 0%, rgba(235, 51, 73, 1) 100%)'
+      : 'white',
+    }
 
     return (
       <div className="addbox">
@@ -58,9 +90,15 @@ class Addbox extends Component {
             handleChangeDate={this.handleChangeDate}
           />
           <p>Use a progress bar?</p>
-          <input type="checkbox" id="cbox1" value="checkbox1"/>
+          <div className="squaredOne" onClick={this.handleCheckProgressBar}>
+            <input type="checkbox" value="None" name="check" />
+            <label style={button1Style} htmlFor="squaredOne" />
+          </div>
           <p>Use subtasks?</p>
-          <input type="checkbox" id="cbox1" value="checkbox1"/>
+          <div className="squaredOne" onClick={this.handleCheckSubtasks}>
+            <input type="checkbox" value="None" name="check" />
+            <label style={button2Style} htmlFor="squaredOne" />
+          </div>
           <button
             type="button"
             className="validate"
