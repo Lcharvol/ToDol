@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 
 import './DateSelector.css';
+import Time from 'react-time-format';
 
 class DateSelector extends Component {
   state = {
     day: 20,
     month: 4,
     year: 2017,
+  }
+
+  componentDidMount = () => {
+    const now = new Date();
+    
+    this.setState({ day: now.getDate(), month: now.getMonth() + 1, year: now.getFullYear() });
   }
 
   handleChangeDate = (id) => {

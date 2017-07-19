@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import './addbox.css';
 
 import DateSelector from '../DateSelector';
+import Time from 'react-time-format';
 
 class Addbox extends Component {
 
@@ -14,7 +15,7 @@ class Addbox extends Component {
 
   state = {
     value: '',
-    date: '20/04/2017',
+    date: '00/00/0000',
   };
 
   handleChangeValue = ({ target: { value } }) => {
