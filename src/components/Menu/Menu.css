@@ -1,0 +1,8 @@
+.menuContainer
+{
+  position: relative;
+  height:35px;
+  width:70%;
+  background-color: white;
+  border-radius: 3px;
+}

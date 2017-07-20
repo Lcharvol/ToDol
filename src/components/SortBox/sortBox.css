@@ -6,7 +6,6 @@
   overflow: hidden;
   height:35px;
   background-color:white;
-  margin-top:15px;
   border-radius: 4px;
   transition: all 0.2s ease-in;
   box-shadow:
@@ -95,5 +94,5 @@
   justify-content: space-around;
   text-align: center;
   color:white;
-  
+
 }

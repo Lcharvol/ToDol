@@ -45,8 +45,6 @@ class SortBox extends Component {
     };
 
     return (
-      <div className="sortBoxContainer">
-        <div className="sortBoxContainerInner">
           <div className="sortBox" style={divStyle}>
             <div className="sortBoxRightSide">
               <p className="sortBy">Sort by</p>
@@ -58,8 +56,6 @@ class SortBox extends Component {
             <p className="sortType" style={{color: textFocus === 2 ? 'rgba(244, 92, 67, 1)' : 'rgb(85,96,78)'}} onClick={() => this.onclick(2)}>For</p>
             <p className="sortType" style={{color: textFocus === 3 ? 'rgba(244, 92, 67, 1)' : 'rgb(85,96,78)'}} onClick={() => this.onclick(3)}>Since</p>
           </div>
-        </div>
-      </div>
     );
   }
 }

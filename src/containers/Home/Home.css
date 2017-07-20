@@ -8,3 +8,13 @@
   margin-top:12px;
   max-width:1000px;
 }
+.menuAndSort
+{
+  display: flex;
+  align-items: center;
+  width:90%;
+  height:65px;
+  max-width:1000px;
+  margin:auto;
+  margin-top:25px;
+}

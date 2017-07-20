@@ -7,6 +7,7 @@ import Addbox from '../../components/AddBox';
 import ResearchBox from '../../components/ResearchBox';
 import SortBox from '../../components/SortBox';
 import TopArrow from '../../components/TopArrow';
+import Menu from '../../components/Menu';
 import Time from 'react-time-format';
 import { list } from '../../Constants';
 import './Home.css';
@@ -171,9 +172,12 @@ class Home extends Component {
           displayFakeResearchBox={this.displayFakeResearchBox}
           research={this.research}
         />
-        <SortBox
-          sortBy={this.sortBy}
-        />
+        <div className="menuAndSort">
+          <Menu />
+          <SortBox
+            sortBy={this.sortBy}
+          />
+        </div>
         {list.map((li) => (
           <Todolist
             key={li.id}
