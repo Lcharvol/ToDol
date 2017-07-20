@@ -20,22 +20,23 @@ class ProgressBar extends Component {
 
   componentDidMount = () => {
     window.addEventListener('mouseup', this.dragOff, false);
-    const { fore, since } = this.props;
-    console.log(fore);
-    console.log(since);
+    let { fore, since } = this.props;
+
+    fore = fore.split('/');
+    since = since.split('/');
     const now = new Date();
-    const start = new Date(since);
-    const end = new Date(fore);
+    const start = new Date(`${since[2]}/${since[1]}/${since[0]}`);
+    const end = new Date(`${fore[2]}/${fore[1]}/${fore[0]}`);
+
+
     const dayStart = start.getDate() + (start.getMonth() * 30) + (start.getFullYear() * 365);
     const dayNow = now.getDate() + (now.getMonth() * 30) + (now.getFullYear() * 365);
     const dayEnd = end.getDate() + (end.getMonth() * 30) + (end.getFullYear() * 365);
-    console.log(dayStart);
-    console.log(dayNow);
-    console.log(dayEnd);
+
     if (dayNow > dayEnd) {
       this.setState({ theoreticalProgress: 100 });
     } else {
-      const prog = 100 - ((100 / (dayEnd - dayStart)) * ((dayEnd - dayNow) / (dayEnd - dayStart)));
+      const prog = 100 - (100 * ((dayEnd - dayNow) / (dayEnd - dayStart)));
       console.log(prog);
       this.setState({ theoreticalProgress: prog });
     }

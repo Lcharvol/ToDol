@@ -15,6 +15,7 @@
   margin-top:25px;
   border-radius: 100px;
   text-align: center;
+  overflow: hidden;
   box-shadow: inset 5px 5px 10px 0px rgba(155,155,155,0.2);
 }
 
@@ -30,7 +31,7 @@
 {
   position: relative;
   height:100%;
-  border-radius: 100px;
+  border-radius: 200px;
   background: #EB3349;
   background: -webkit-linear-gradient(to right, #F45C43, #EB3349);
   background: linear-gradient( 90deg, rgba(244, 92, 67, 1) 0%, rgba(235, 51, 73, 0.7) 100%);

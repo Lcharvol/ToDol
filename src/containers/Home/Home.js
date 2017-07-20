@@ -55,7 +55,7 @@ class Home extends Component {
       list: [{
         todo,
         fore: date,
-        since: <Time value={now} format="DD/MM/YYYY" />,
+        since: (now.getDate()+"/"+(now.getMonth()+1)+"/"+now.getFullYear()),
         id: index,
         done: false,
         subtasks: [],
@@ -89,6 +89,10 @@ class Home extends Component {
       return (-1);
     }
     return (1);
+  }
+
+  sortByDay = (day) => {
+    console.log(day);
   }
 
   sortByFor = (a, b) => {
@@ -173,7 +177,9 @@ class Home extends Component {
           research={this.research}
         />
         <div className="menuAndSort">
-          <Menu />
+          <Menu
+            sortByDay={this.sortByDay}
+          />
           <SortBox
             sortBy={this.sortBy}
           />
