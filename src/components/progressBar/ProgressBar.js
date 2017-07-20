@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Time from 'react-time-format';
 
 import './ProgressBar.css';
 
@@ -19,13 +20,27 @@ class ProgressBar extends Component {
 
   componentDidMount = () => {
     window.addEventListener('mouseup', this.dragOff, false);
-
-    this.setState({ theoreticalProgress: () => this.setTheoricalProgress });
+    const { fore, since } = this.props;
+    console.log(fore);
+    console.log(since);
+    const now = new Date();
+    const start = new Date(since);
+    const end = new Date(fore);
+    const dayStart = start.getDate() + (start.getMonth() * 30) + (start.getFullYear() * 365);
+    const dayNow = now.getDate() + (now.getMonth() * 30) + (now.getFullYear() * 365);
+    const dayEnd = end.getDate() + (end.getMonth() * 30) + (end.getFullYear() * 365);
+    console.log(dayStart);
+    console.log(dayNow);
+    console.log(dayEnd);
+    if (dayNow > dayEnd) {
+      this.setState({ theoreticalProgress: 100 });
+    } else {
+      const prog = 100 - ((100 / (dayEnd - dayStart)) * ((dayEnd - dayNow) / (dayEnd - dayStart)));
+      console.log(prog);
+      this.setState({ theoreticalProgress: prog });
+    }
   }
 
-  setTheoricalProgress = () => {
-    return (10);
-  }
 
   updateProgress = (e) => {
     const { handleChangeProgress } = this.props;
@@ -62,7 +77,7 @@ class ProgressBar extends Component {
       width: `${progress}%`,
     };
 
-    let theoreticalBarStyle = {
+    const theoreticalBarStyle = {
       width: `${theoreticalProgress}%`,
     }
 

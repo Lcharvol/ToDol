@@ -175,6 +175,8 @@ class toDoList extends Component {
           {displayProgressBar &&
             <ProgressBar
               handleChangeProgress={this.handleChangeProgress}
+              fore={fore}
+              since={since}
             />
           }
           {displaySubtasks &&
