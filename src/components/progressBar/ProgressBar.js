@@ -13,10 +13,18 @@ class ProgressBar extends Component {
     progDrag: false,
     startDrag: 0,
     progress: 0,
+    theoreticalProgress: 0,
   }
+
 
   componentDidMount = () => {
     window.addEventListener('mouseup', this.dragOff, false);
+
+    this.setState({ theoreticalProgress: () => this.setTheoricalProgress });
+  }
+
+  setTheoricalProgress = () => {
+    return (10);
   }
 
   updateProgress = (e) => {
@@ -46,13 +54,17 @@ class ProgressBar extends Component {
   }
 
   render() {
-    const { progress } = this.state;
+    const { progress, theoreticalProgress } = this.state;
 
     window.addEventListener('mousemove', this.updateProgress, false);
 
     let barStyle = {
       width: `${progress}%`,
     };
+
+    let theoreticalBarStyle = {
+      width: `${theoreticalProgress}%`,
+    }
 
     const progressTextStyle = {
       color: `rgb(${this.setProgressTextColor()}, 92, 67`,
@@ -63,6 +75,7 @@ class ProgressBar extends Component {
     return (
       <div className="progressElem">
         <div className="progressBar">
+          <div className="theoreticalProgressBar" style={theoreticalBarStyle} />
           <div className="progressBarInner" style={barStyle}>
             <div
               className="cursor"
