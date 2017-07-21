@@ -37,7 +37,6 @@ class ProgressBar extends Component {
       this.setState({ theoreticalProgress: 100 });
     } else {
       const prog = 100 - (100 * ((dayEnd - dayNow) / (dayEnd - dayStart)));
-      console.log(prog);
       this.setState({ theoreticalProgress: prog });
     }
   }

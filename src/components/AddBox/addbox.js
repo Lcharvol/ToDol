@@ -1,12 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import DateSelector from '../DateSelector';
 
 import './addbox.css';
 
-import DateSelector from '../DateSelector';
-import Time from 'react-time-format';
-
 class Addbox extends Component {
-
 
   static propTypes = {
     publish: PropTypes.func.isRequired,
@@ -25,7 +22,7 @@ class Addbox extends Component {
   };
 
   handleChangeDate = (day, month, year) => {
-    this.setState({ date: `${day}/${month}/${year}`});
+    this.setState({ date: `${day}/${month}/${year}` });
   };
 
   handleSubmit = () => {
@@ -42,9 +39,9 @@ class Addbox extends Component {
     const { progressBar } = this.state;
 
     if (progressBar === false) {
-      this.setState({ progressBar: true })
+      this.setState({ progressBar: true });
     } else {
-      this.setState({ progressBar: false })
+      this.setState({ progressBar: false });
     }
   }
 
@@ -52,9 +49,9 @@ class Addbox extends Component {
     const { subtasks } = this.state;
 
     if (subtasks === false) {
-      this.setState({ subtasks: true })
+      this.setState({ subtasks: true });
     } else {
-      this.setState({ subtasks: false })
+      this.setState({ subtasks: false });
     }
   }
 
@@ -66,12 +63,12 @@ class Addbox extends Component {
     const button1Style = {
       background: progressBar ? 'linear-gradient( 0deg, rgba(244, 92, 67, 1) 0%, rgba(235, 51, 73, 1) 100%)'
       : 'white',
-    }
+    };
 
     const button2Style = {
       background: subtasks ? 'linear-gradient( 0deg, rgba(244, 92, 67, 1) 0%, rgba(235, 51, 73, 1) 100%)'
       : 'white',
-    }
+    };
 
     return (
       <div className="addbox">
@@ -91,14 +88,14 @@ class Addbox extends Component {
           />
           <div className="addboxOptionContainer">
             <p>Use a progress bar?</p>
-            <div className="squaredOne" onClick={this.handleCheckProgressBar}>
+            <div className="squaredOne" onClick={this.handleCheckProgressBar} role="button">
               <input type="checkbox" value="None" name="check" />
               <label style={button1Style} htmlFor="squaredOne" />
             </div>
           </div>
           <div className="addboxOptionContainer">
             <p>Use subtasks?</p>
-            <div className="squaredOne" onClick={this.handleCheckSubtasks}>
+            <div className="squaredOne" onClick={this.handleCheckSubtasks} role="button">
               <input type="checkbox" value="None" name="check" />
               <label style={button2Style} htmlFor="squaredOne" />
             </div>

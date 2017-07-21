@@ -45,7 +45,7 @@ class toDoList extends Component {
   componentDidMount = () => {
     const { done } = this.props;
     if (done === true) {
-      this.setState({ checked: true })
+      this.setState({ checked: true });
     }
     window.addEventListener('mousemove', this.updateProgress, false);
     window.addEventListener('mouseup', this.dragOff, false);
@@ -131,7 +131,7 @@ class toDoList extends Component {
 
   render() {
     const { props: { todo, fore, since, id, subtasks, remove, research } } = this;
-    const { minimize, checked, trashfocus, wrap, progress, optionfocus, displayOption,
+    const { minimize, checked, trashfocus, wrap, optionfocus, displayOption,
       displayProgressBar, displaySubtasks, displayArrow } = this.state;
 
     return (

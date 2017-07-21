@@ -1,53 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import './Menu.css';
-
-class MenuElem extends Component {
-
-  state = {
-    focus: false,
-  }
-
-  handleTextFocus = () => {
-    const { focus } = this.state;
-
-    if (focus === false) {
-      this.setState({ focus: true })
-    } else {
-      this.setState({ focus: false })
-    }
-  }
-
-  render() {
-    const { name, sortByDay, selected, handleChangeSelected } = this.props;
-    const { focus} = this.state;
-    
-    const divStyle = {
-      color: (focus || selected === name) ? 'rgba(244, 92, 67, 1)' : 'rgb(75,86,78)',
-    }
-    return (
-      <div
-        className="menuElem"
-        onClick={() => sortByDay(name), () => handleChangeSelected(name)}
-        style={divStyle}
-        onMouseEnter={this.handleTextFocus}
-        onMouseLeave={this.handleTextFocus}
-      >
-        <p>{name}</p>
-      </div>
-    );
-  }
-}
+import MenuElem from '../MenuElem';
 
 class Menu extends Component {
+
+  static propTypes = {
+    sortByDay: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+
+  }
 
   state = {
     selected: '',
   }
 
   handleChangeSelected = (id) => {
-    const { selected } = this.state;
-
     this.setState({ selected: id });
   }
 
