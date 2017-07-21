@@ -1,9 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import './DateSelector.css';
-import Time from 'react-time-format';
 
 class DateSelector extends Component {
+
+  static propTypes = {
+    handleChangeDate: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+
+  }
+
   state = {
     day: 20,
     month: 4,
@@ -76,35 +84,35 @@ class DateSelector extends Component {
     this.setState({ day, month, year }, () => handleChangeDate(day, month, year));
   }
 
-  render () {
+  render() {
     const { day, month, year } = this.state;
 
     return (
-       <div className="DateSelectorContainer">
-        <div onClick={() => this.handleChangeDate(1)} className="selector">
+      <div className="DateSelectorContainer">
+        <div onClick={() => this.handleChangeDate(1)} className="selector" role="button">
           <p>{Math.floor(day / 10)}</p>
         </div>
-        <div onClick={() => this.handleChangeDate(2)} className="selector">
+        <div onClick={() => this.handleChangeDate(2)} className="selector" role="button">
           <p>{day % 10}</p>
         </div>
-        <i className="fa fa-minus tiret" aria-hidden="true"></i>
-        <div onClick={() => this.handleChangeDate(3)} className="selector">
+        <i className="fa fa-minus tiret" aria-hidden="true" />
+        <div onClick={() => this.handleChangeDate(3)} className="selector" role="button">
           <p>{Math.floor(month / 10)}</p>
         </div>
-        <div onClick={() => this.handleChangeDate(4)} className="selector">
+        <div onClick={() => this.handleChangeDate(4)} className="selector" role="button">
           <p>{month % 10}</p>
         </div>
-        <i className="fa fa-minus tiret" aria-hidden="true"></i>
-        <div onClick={() => this.handleChangeDate(5)} className="selector">
+        <i className="fa fa-minus tiret" aria-hidden="true" />
+        <div onClick={() => this.handleChangeDate(5)} className="selector" role="button">
           <p>{Math.floor(year / 1000)}</p>
         </div>
-        <div onClick={() => this.handleChangeDate(6)} className="selector">
+        <div onClick={() => this.handleChangeDate(6)} className="selector" role="button">
           <p>{Math.floor((year % 1000) / 100)}</p>
         </div>
-        <div onClick={() => this.handleChangeDate(7)} className="selector">
+        <div onClick={() => this.handleChangeDate(7)} className="selector" role="button">
           <p>{Math.floor((year % 100) / 10)}</p>
         </div>
-        <div onClick={() => this.handleChangeDate(8)} className="selector">
+        <div onClick={() => this.handleChangeDate(8)} className="selector" role="button">
           <p>{year % 10}</p>
         </div>
       </div>

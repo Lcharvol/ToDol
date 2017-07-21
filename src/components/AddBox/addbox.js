@@ -29,11 +29,11 @@ class Addbox extends Component {
   };
 
   handleSubmit = () => {
-    const { value, date } = this.state;
+    const { value, date, progressBar, subtasks } = this.state;
     const { publish } = this.props;
 
     if (value.length) {
-      publish(value, date);
+      publish(value, date, progressBar, subtasks);
       this.setState({ value: '', date: '00/00/000' });
     }
   }

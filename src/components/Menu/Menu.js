@@ -19,16 +19,16 @@ class MenuElem extends Component {
   }
 
   render() {
-    const { name, sortByDay } = this.props;
-    const { focus } = this.state;
-
+    const { name, sortByDay, selected, handleChangeSelected } = this.props;
+    const { focus} = this.state;
+    
     const divStyle = {
-      color: focus ? 'rgba(244, 92, 67, 1)' : 'rgb(75,86,78)',
+      color: (focus || selected === name) ? 'rgba(244, 92, 67, 1)' : 'rgb(75,86,78)',
     }
     return (
       <div
         className="menuElem"
-        onClick={() => sortByDay(name)}
+        onClick={() => sortByDay(name), () => handleChangeSelected(name)}
         style={divStyle}
         onMouseEnter={this.handleTextFocus}
         onMouseLeave={this.handleTextFocus}
@@ -41,24 +41,41 @@ class MenuElem extends Component {
 
 class Menu extends Component {
 
+  state = {
+    selected: '',
+  }
+
+  handleChangeSelected = (id) => {
+    const { selected } = this.state;
+
+    this.setState({ selected: id });
+  }
+
   render() {
     const { sortByDay } = this.props;
+    const { selected } = this.state;
 
     return (
       <div className="menuContainer">
         <MenuElem
+          handleChangeSelected={this.handleChangeSelected}
           name="Today"
           sortByDay={sortByDay}
+          selected={selected}
         />
         <div className="separator" />
         <MenuElem
+          handleChangeSelected={this.handleChangeSelected}
           name="Tomorow"
           sortByDay={sortByDay}
+          selected={selected}
         />
         <div className="separator" />
         <MenuElem
+          handleChangeSelected={this.handleChangeSelected}
           name="All"
           sortByDay={sortByDay}
+          selected={selected}
         />
       </div>
     );

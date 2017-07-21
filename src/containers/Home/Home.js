@@ -8,7 +8,6 @@ import ResearchBox from '../../components/ResearchBox';
 import SortBox from '../../components/SortBox';
 import TopArrow from '../../components/TopArrow';
 import Menu from '../../components/Menu';
-import Time from 'react-time-format';
 import { list } from '../../Constants';
 import './Home.css';
 
@@ -22,6 +21,10 @@ class Home extends Component {
     displayFakeResearchBox: false,
     sortBy: 'none',
   };
+
+  componentWillMount = () => {
+    window.addEventListener('scroll', this.handleDisplayTopArrow, false);
+  }
 
   remove = (index) => {
     const { list } = this.state;
@@ -46,7 +49,7 @@ class Home extends Component {
     return (id);
   }
 
-  publish = (todo, date) => {
+  publish = (todo, date, progressBar, subtasks) => {
     const { list } = this.state;
     const index = this.generateId();
     const now = new Date();
@@ -55,7 +58,7 @@ class Home extends Component {
       list: [{
         todo,
         fore: date,
-        since: (now.getDate()+"/"+(now.getMonth()+1)+"/"+now.getFullYear()),
+        since: `${now.getDate()}/${(now.getMonth() + 1)}/${now.getFullYear()}`,
         id: index,
         done: false,
         subtasks: [],
@@ -92,7 +95,7 @@ class Home extends Component {
   }
 
   sortByDay = (day) => {
-    console.log(day);
+
   }
 
   sortByFor = (a, b) => {
@@ -167,7 +170,6 @@ class Home extends Component {
   render() {
     const { list, displaybox, displayTopArrow, research, displayFakeResearchBox } = this.state;
 
-    window.addEventListener('scroll', this.handleDisplayTopArrow, false);
     return (
       <div className="homepage">
         <Header />

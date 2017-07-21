@@ -18,6 +18,12 @@ class Subtasks extends Component {
     value: '',
   };
 
+  componentWillMount = () => {
+    const { subtasks } = this.props;
+
+    this.setState({ subtasks });
+  }
+
   getnewsubtaskid = () => {
     const { subtasks } = this.state;
     let id = 0;
@@ -29,18 +35,16 @@ class Subtasks extends Component {
   }
 
   addnewsubtask = (value) => {
-    if (value === '') { return; }
+    if (value === '') {
+
+      return;
+    }
     const { subtasks } = this.state;
     const newid = this.getnewsubtaskid();
 
     this.setState({ subtasks: [{ todo: value, id: newid }, ...subtasks], value: '' });
   }
 
-  componentWillMount = () => {
-    const { subtasks } = this.props;
-
-    this.setState({ subtasks });
-  }
 
   remove = (index) => {
     const { subtasks } = this.state;
