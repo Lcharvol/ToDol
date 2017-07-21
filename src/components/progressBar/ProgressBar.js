@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import Time from 'react-time-format';
 
 import './ProgressBar.css';
 
@@ -8,6 +7,8 @@ class ProgressBar extends Component {
   static PropTypes = {
     progress: PropTypes.number.isRequired,
     handleChangeProgress: PropTypes.func.isRequired,
+    fore: PropTypes.string.isRequired,
+    since: PropTypes.string.isRequired,
   }
 
   state = {

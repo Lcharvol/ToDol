@@ -8,11 +8,11 @@
   height:70px;
   margin:auto;
   border-radius: 3px;
-  background: -webkit-linear-gradient(top, rgb(235,235,235) 0%, rgb(255,255,255) 40%, rgb(235,235,235) 100%);
-	background: -moz-linear-gradient(top, rgb(235,235,235) 0%, rgb(255,255,255) 40%, rgb(235,235,235) 100%);
-	background: -o-linear-gradient(top, rgb(235,235,235) 0%, rgb(255,255,255) 40%, rgb(235,235,235) 100%);
-	background: -ms-linear-gradient(top, rgb(235,235,235) 0%, rgb(255,255,255) 40%, rgb(235,235,235) 100%);
-	background: linear-gradient(top, rgb(235,235,235) 0%, rgb(255,255,255) 40%, rgb(235,235,235) 100%);
+  background: -webkit-linear-gradient(to top, rgb(235,235,235) 0%, rgb(255,255,255) 40%, rgb(235,235,235) 100%);
+	background: -moz-linear-gradient(to top, rgb(235,235,235) 0%, rgb(255,255,255) 40%, rgb(235,235,235) 100%);
+	background: -o-linear-gradient(to top, rgb(235,235,235) 0%, rgb(255,255,255) 40%, rgb(235,235,235) 100%);
+	background: -ms-linear-gradient(to top, rgb(235,235,235) 0%, rgb(255,255,255) 40%, rgb(235,235,235) 100%);
+	background: linear-gradient(to top, rgb(235,235,235) 0%, rgb(255,255,255) 40%, rgb(235,235,235) 100%);
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
